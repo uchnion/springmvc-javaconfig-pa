@@ -1,4 +1,3 @@
-
 package com.uchnion.web.service;
 
 import com.uchnion.web.dao.DaoMapel;
@@ -29,7 +28,7 @@ public class MapelServiceImp implements MapelService{
         daomapel.updateMapel(mapel);
     }
 
-    @Override
+    @Override   
     public void deleteMapel(String kodemapel) {
         daomapel.deleteMapel(kodemapel);
     }
@@ -38,7 +37,7 @@ public class MapelServiceImp implements MapelService{
     @Transactional(readOnly = true)
     public Mapel getMapel(String kodemapel) {
         daomapel.getMapel(kodemapel);
-        return null;
+        return null;    
     }
 
     @Override

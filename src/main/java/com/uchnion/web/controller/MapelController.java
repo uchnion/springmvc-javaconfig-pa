@@ -1,4 +1,3 @@
-
 package com.uchnion.web.controller;
 
 import com.uchnion.web.model.Mapel;
@@ -25,7 +24,7 @@ public class MapelController {
 
     @RequestMapping(value = "/mapelinput", method = RequestMethod.GET)
     public String MapelTambahPage(Model model) {
-        model.addAttribute("tbmapel", new Mapel());
+        model.addAttribute("tambahmapel", new Mapel());
 
         return "inputmapel";
     }
@@ -40,7 +39,7 @@ public class MapelController {
         return "mapel";
     }
 
-    @RequestMapping(value = "mapeltampil", method = RequestMethod.GET)
+    @RequestMapping(value = "/mapeltampil", method = RequestMethod.GET)
     public String MapelTampilPage(Model model) {
         List<Mapel> list = mapelservice.getAllMapel();
         model.addAttribute("BanyakMapel", list);
@@ -48,43 +47,39 @@ public class MapelController {
         return "mapel";
     }
 
-    @RequestMapping(value = "mapeledit/{kodemapel}",method = RequestMethod.GET)
-    public ModelAndView MapelEditPage(@PathVariable String kodemapel){
+    @RequestMapping(value = "/mapeledit/{kodemapel}", method = RequestMethod.GET)
+    public ModelAndView MapelEditPage(@PathVariable String kodemapel) {
         ModelAndView mav = new ModelAndView("editmapel");
-        
+
         Mapel mapel = mapelservice.getMapel(kodemapel);
-        mav.addObject("perbaharui",mapel);
-        
+        mav.addObject("tbmapel", mapel);
+
         return mav;
     }
     
-    @RequestMapping (value = "mapeledit/{kodemapel}",method = RequestMethod.POST)
-    public ModelAndView MapelEditingPage (@ModelAttribute Mapel pembaharui
-            ,@PathVariable String kodemapel){
+
+    @RequestMapping(value = "/mapeledit/{kodemapel}", method = RequestMethod.POST)
+    public ModelAndView MapelEditingPage(@ModelAttribute Mapel mapel, @PathVariable String kodemapel) {
         ModelAndView mav = new ModelAndView("mapel");
-        
-        mapelservice.updateMapel(pembaharui);
+        mapelservice.updateMapel(mapel);
+
         String pesan = "Mata Pelajaran berhasil diperbaharui";
-        mav.addObject("pesan",pesan);
-        
+        mav.addObject("pesan", pesan);
+
         List<Mapel> list= mapelservice.getAllMapel();
         mav.addObject("BanyakMapel",list);
-        
         return mav;
     }
-    
-    @RequestMapping(value = "mapeldelete/{kodemapel}",method = RequestMethod.GET)
-    public String DeleteMapelPage(@PathVariable String kodemapel,Model model){
-        mapelservice.deleteMapel(kodemapel);
-        
-        String pesan ="Mata Pelajaran berhasil di hapus";
-        model.addAttribute("pesan",pesan);
-        
-        List<Mapel> list = mapelservice.getAllMapel();
-        model.addAttribute("BanyakMapel",list);
-        
-        return "mapel";
-    }       
-    
-}
 
+    @RequestMapping(value = "/mapeldelete/{kodemapel}", method = RequestMethod.GET)
+    public String DeleteMapelPage(@PathVariable String kodemapel, Model model) {
+        mapelservice.deleteMapel(kodemapel);
+        List<Mapel> list = mapelservice.getAllMapel();
+        model.addAttribute("BanyakMapel", list);
+        String pesan = "Mata Pelajaran berhasil di hapus";
+        model.addAttribute("pesan", pesan);
+
+        return "mapel";
+    }
+
+}

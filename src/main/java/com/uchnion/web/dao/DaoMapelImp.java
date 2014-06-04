@@ -1,4 +1,3 @@
-
 package com.uchnion.web.dao;
 
 import com.uchnion.web.model.Mapel;
@@ -12,7 +11,6 @@ import org.springframework.stereotype.Repository;
  *
  * @author Marojahan
  */
-
 @Repository
 public class DaoMapelImp implements DaoMapel{
 
@@ -26,13 +24,14 @@ public class DaoMapelImp implements DaoMapel{
     @Override
     public void insertMapel(Mapel mapel) {
         getSessionFactory().save(mapel);
-    }
+    }   
 
     @Override
     public void updateMapel(Mapel mapel) {
        Mapel MapelUp = getMapel(mapel.getKodemapel());
         
         if(MapelUp != null){
+            MapelUp.setKodemapel(mapel.getKodemapel());
             MapelUp.setNamamapel(mapel.getNamamapel());
             MapelUp.setKkm(mapel.getKkm());
             

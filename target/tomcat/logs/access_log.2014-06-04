@@ -1,0 +1,8 @@
+0:0:0:0:0:0:0:1 - - [04/Jun/2014:11:09:06 +0700] "GET /sman3seluma/mapeltampil HTTP/1.1" 200 9528 http-bio-8080-exec-1 2552
+0:0:0:0:0:0:0:1 - - [04/Jun/2014:11:09:06 +0700] "GET /sman3seluma/assets/css/bootstrap-responsive.css HTTP/1.1" 200 25772 http-bio-8080-exec-3 27
+0:0:0:0:0:0:0:1 - - [04/Jun/2014:11:09:06 +0700] "GET /sman3seluma/assets/css/prettify.css HTTP/1.1" 200 857 http-bio-8080-exec-4 13
+0:0:0:0:0:0:0:1 - - [04/Jun/2014:11:09:06 +0700] "GET /sman3seluma/assets/css/bootstrap.css HTTP/1.1" 200 136864 http-bio-8080-exec-2 44
+0:0:0:0:0:0:0:1 - - [04/Jun/2014:11:09:06 +0700] "GET /sman3seluma/assets/css/docs.css HTTP/1.1" 200 24237 http-bio-8080-exec-5 35
+0:0:0:0:0:0:0:1 - - [04/Jun/2014:11:09:06 +0700] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8080-exec-7 0
+0:0:0:0:0:0:0:1 - - [04/Jun/2014:11:09:11 +0700] "GET /sman3seluma/siswainput HTTP/1.1" 200 8255 http-bio-8080-exec-10 461
+0:0:0:0:0:0:0:1 - - [04/Jun/2014:11:09:33 +0700] "POST /sman3seluma/siswainput HTTP/1.1" 400 968 http-bio-8080-exec-10 17

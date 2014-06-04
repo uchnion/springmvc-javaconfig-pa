@@ -11,10 +11,15 @@ import java.util.List;
 public interface DaoMapel {
     
     void insertMapel (Mapel mapel);
+    
     void updateMapel (Mapel mapel);
+    
     void deleteMapel (String kodemapel);
+    
     Mapel getMapel (String kodemapel);
+    
     void selectMapel (Mapel mapel);
+    
     List<Mapel>getAllMapel();
     
 }
