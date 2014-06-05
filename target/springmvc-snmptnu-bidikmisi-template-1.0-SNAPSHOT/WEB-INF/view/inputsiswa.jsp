@@ -91,25 +91,22 @@
                                class="bs-docs-example form-horizontal">
 
                         <div class="control-group info">
-                            <label class="control-label" for="inputInfo">NIS :</label>
-                            <div class="controls">
-                                <form:input path="nis"/>
-                            </div>
-                        </div>
-
-                        <div class="control-group info">
                             <label class="control-label" for="inputInfo">Nama Peserta Didik :</label>
                             <div class="controls">
                                 <form:input path="nama"/>
                                 <span class="help-inline">(Lengkap)</span>
                             </div>
                         </div>
-
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">NIS :</label>
+                            <div class="controls">
+                                <form:input path="nis"/>
+                            </div>
+                        </div>
                         <div class="control-group info">
                             <label class="control-label" for="inputInfo">Tempat :</label>
                             <div class="controls">
                                 <form:input path="tempat_l"/>
-
                                 <span class="help-inline">Tanggal Lahir : </span>
                                 <form:input path="tanggal_l" type="date" />
                             </div>
@@ -119,11 +116,31 @@
                             <label class="control-label" for="inputInfo">Jenis Kelamin :</label>
                             <div class="controls">
                                 <label class="radio">
-                                    <form:radiobutton path="jk_kelamin" value="Laki-laki" />Laki-laki
+                                    <form:radiobutton path="jeniskelamin" value="Laki-laki" />Laki-laki
                                 </label>
                                 <label class="radio">
-                                    <form:radiobutton path="jk_kelamin" value="Perempuan" />Perempuan
+                                    <form:radiobutton path="jeniskelamin" value="Perempuan" />Perempuan
                                 </label>
+                            </div>
+                        </div>
+
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Agama :</label>
+                            <div class="controls">
+                                <form:input path="agama" />
+                            </div>
+                        </div>
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Anak Ke- :</label>
+                            <div class="controls">
+                                <form:input path="anak_ke" class="span1" />
+                            </div>
+                        </div>
+
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Status dalam Keluarga :</label>
+                            <div class="controls">
+                                <form:input path="statinkeluarga" />
                             </div>
                         </div>
 
@@ -134,6 +151,137 @@
                             </div>
                         </div>
 
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Telepon :</label>
+                            <div class="controls">
+                                <form:input path="telepon" />
+                            </div>
+                        </div>
+
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Diterima di Dekolah ini</label>
+                        </div>
+
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Di Kelas :</label>
+                            <div class="controls">
+                                <form:input path="dikelas" />
+                            </div>
+                        </div>
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Pada Tanggal :</label>
+                            <div class="controls">
+                                <form:input path="padatgl" type="date"/>
+                            </div>
+                        </div>
+
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Semester :</label>
+                            <div class="controls">
+                                <form:input path="semester" />
+                            </div>
+                        </div>
+
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Sekolah/Madrasah asal</label>
+                        </div>
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Nama Sekolah/Madrasah</label>
+                            <div class="controls">
+                                <form:input path="skol_asal"/>
+                            </div>
+                        </div>
+
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Alamat :</label>
+                            <div class="controls">
+                                <form:textarea path="almskol_asal" rows="3"/>
+                            </div>
+                        </div>
+
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Surat Tanda Lulus MTs/SMP</label>
+                        </div>
+
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Tahun :</label>
+                            <div class="controls">
+                                <form:input path="ijazahtahun"/>
+                            </div>
+                        </div>
+
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Nomor :</label>
+                            <div class="controls">
+                                <form:input path="ijazahno"/>
+                            </div>
+                        </div>
+
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Surat Keterangan Hasil Ujian Nasional(SKHUN) SMP/MTs</label>
+                        </div>
+
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Tahun :</label>
+                            <div class="controls">
+                                <form:input path="skhuntahun"/>
+                            </div>
+                        </div>
+
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Nomor :</label>
+                            <div class="controls">
+                                <form:input path="skhunno"/>
+                            </div>
+                        </div>
+
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Nama Orang Tua</label>
+                        </div>
+
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Ayah :</label>
+                            <div class="controls">
+                                <form:input path="namaayah"/>
+                            </div>
+                        </div>
+
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Ibu :</label>
+                            <div class="controls">
+                                <form:input path="namaibu"/>
+                            </div>
+                        </div>
+
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Alamat Orang Tua :</label>
+                            <div class="controls">
+                                <form:textarea path="alamatortu" rows="3"/>
+                            </div>
+                        </div>
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Telepon Orang Tua :</label>
+                            <div class="controls">
+                                <form:input path="telepon_ortu"/>
+                            </div>
+                        </div>
+
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Pekerjaan Orang Tua</label>
+                        </div>
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Ayah :</label>
+                            <div class="controls">
+                                <form:input path="kerjaayah"/>
+                            </div>
+                        </div>
+
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Ibu :</label>
+                            <div class="controls">
+                                <form:input path="kerjaibu"/>
+                            </div>
+                        </div>
 
                         <div class="control-group info">
                             <label class="control-label" for="inputInfo">Penghasilan Orang Tua :</label>
@@ -142,6 +290,49 @@
                                     <span class="add-on">Rp.</span>
                                     <!--<input class="span2" id="appendedPrependedInput" type="text">-->
                                     <form:input path="gaji_ortu" class="span2"/>
+                                    <span class="add-on">.00</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="page-header">
+                        </div>
+
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Nama Wali :</label>
+                            <div class="controls">
+                                <form:input path="namawali"/>
+                            </div>
+                        </div>
+
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Alamat Wali :</label>
+                            <div class="controls">
+                                <form:textarea path="alamatwali" rows="3"/>
+                            </div>
+                        </div>
+
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Telepon Wali :</label>
+                            <div class="controls">
+                                <form:input path="teleponwali"/>
+                            </div>
+                        </div>
+
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Pekerjaan Wali :</label>
+                            <div class="controls">
+                                <form:input path="kerjawali"/>
+                            </div>
+                        </div>
+
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Penghasilan Wali :</label>
+                            <div class="controls">
+                                <div class="input-prepend input-append">
+                                    <span class="add-on">Rp.</span>
+                                    <!--<input class="span2" id="appendedPrependedInput" type="text">-->
+                                    <form:input path="penghasilan_wali" class="span2"/>
                                     <span class="add-on">.00</span>
                                 </div>
                             </div>

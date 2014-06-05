@@ -1,0 +1,2 @@
+0:0:0:0:0:0:0:1 - - [05/Jun/2014:11:10:59 +0700] "GET /sman3seluma/siswainput HTTP/1.1" 200 18616 http-bio-8080-exec-1 7208
+0:0:0:0:0:0:0:1 - - [05/Jun/2014:11:12:59 +0700] "POST /sman3seluma/siswainput HTTP/1.1" 200 216 http-bio-8080-exec-4 1409
