@@ -46,18 +46,26 @@ public class SiswaController {
 
         return "siswa";
     }
+    
+    @RequestMapping(value = "/siswatampil/pribadi/{id}", method = RequestMethod.GET)
+    public String SiswaPribadiPage(Model model) { 
+        List <Siswa> siswa = siswaservice.getAllSiswa();
+        model.addAttribute("tampilpribadi", siswa);
+        
+        return "siswapribadi";
+    }
 
-    @RequestMapping(value = "/siswaedit/{kodesiswa}", method = RequestMethod.GET)
+    @RequestMapping(value = "/siswaedit/{id}", method = RequestMethod.GET)
     public ModelAndView SiswaEditPage(@PathVariable Integer id) {
         ModelAndView mav = new ModelAndView("editsiswa");
 
         Siswa siswa = siswaservice.getSiswa(id);
-        mav.addObject("ubah", siswa);
+        mav.addObject("ubahsiswa", siswa);
 
         return mav;
     }
 
-    @RequestMapping(value = "/siswaedit/{kodesiswa}", method = RequestMethod.POST)
+    @RequestMapping(value = "/siswaedit/{id}", method = RequestMethod.POST)
     public ModelAndView SiswaEditingPage(@ModelAttribute Siswa siswa, @PathVariable Integer id) {
         ModelAndView mav = new ModelAndView("siswa");
         siswaservice.updateSiswa(siswa);
@@ -70,7 +78,7 @@ public class SiswaController {
         return mav;
     }
 
-    @RequestMapping(value = "/siswadelete/{kodesiswa}", method = RequestMethod.GET)
+    @RequestMapping(value = "/siswadelete/{id}", method = RequestMethod.GET)
     public String DeleteSiswaPage(@PathVariable Integer id, Model model) {
         siswaservice.deleteSiswa(id);
         List<Siswa> list = siswaservice.getAllSiswa();
