@@ -52,7 +52,7 @@ public class KelasController {
         ModelAndView mav = new ModelAndView("editkelas");
 
         Kelas kelas = kelasservice.getKelas(kodekelas);
-        mav.addObject("tbkelas", kelas);
+        mav.addObject("ubahkelas", kelas);
 
         return mav;
     }

@@ -36,8 +36,7 @@ public class MapelServiceImp implements MapelService{
     @Override
     @Transactional(readOnly = true)
     public Mapel getMapel(String kodemapel) {
-        daomapel.getMapel(kodemapel);
-        return null;    
+        return daomapel.getMapel(kodemapel);
     }
 
     @Override

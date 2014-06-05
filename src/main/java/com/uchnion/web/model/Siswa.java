@@ -1,61 +1,57 @@
 package com.uchnion.web.model;
 
 import java.io.Serializable;
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
 import javax.validation.constraints.NotNull;
 
 /**
  *
  * @author Marojahan
  */
+
 @Entity
-@Table (name ="SISWA")
-public class Siswa implements Serializable{
-    
+@Table(name = "SISWA")
+public class Siswa implements Serializable {
+
     public static final long serialVersionID = 1L;
-    
+
     @Id
     @GeneratedValue
     @Column(name = "ID")
     private Integer id;
-    
+
     @NotNull
     @Column(nullable = false, length = 20)
     private String nis;
-    
+
     @NotNull
     @Column(nullable = false, length = 120)
     private String nama;
-    
+
     @NotNull
     @Column(nullable = false, length = 20)
     private String jk_kelamin;
-    
+
     @NotNull
     @Column(nullable = false, length = 120)
     private String tempat_l;
-    
+
     @NotNull
     @Column(nullable = false)
-    @Temporal(javax.persistence.TemporalType.DATE)
-    private Date tanggal_l;
-    
+    private String tanggal_l;
+
     @NotNull
     @Column(nullable = false, length = 200)
     private String alamat;
-    
+
     @NotNull
     @Column(nullable = false, length = 15)
     private Integer gaji_ortu;
-    
-    
-    
+
 //    generate setter and getter
     
     public Integer getId() {
@@ -90,11 +86,11 @@ public class Siswa implements Serializable{
         this.tempat_l = tempat_l;
     }
 
-    public Date getTanggal_l() {
+    public String getTanggal_l() {
         return tanggal_l;
     }
 
-    public void setTanggal_l(Date tanggal_l) {
+    public void setTanggal_l(String tanggal_l) {
         this.tanggal_l = tanggal_l;
     }
 
@@ -121,5 +117,5 @@ public class Siswa implements Serializable{
     public void setJk_kelamin(String jk_kelamin) {
         this.jk_kelamin = jk_kelamin;
     }
-    
+
 }

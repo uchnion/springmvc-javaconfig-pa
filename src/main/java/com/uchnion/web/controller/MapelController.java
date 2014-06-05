@@ -52,7 +52,7 @@ public class MapelController {
         ModelAndView mav = new ModelAndView("editmapel");
 
         Mapel mapel = mapelservice.getMapel(kodemapel);
-        mav.addObject("tbmapel", mapel);
+        mav.addObject("ubahmapel", mapel);
 
         return mav;
     }

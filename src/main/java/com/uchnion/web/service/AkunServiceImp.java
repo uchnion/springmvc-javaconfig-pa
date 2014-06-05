@@ -36,8 +36,7 @@ public class AkunServiceImp implements AkunService{
     @Override
     @Transactional(readOnly = true)
     public Akun getAkun(String userakun) {
-        daoakun.getAkun(userakun);
-        return  null;
+        return daoakun.getAkun(userakun);
     }
 
     @Override

@@ -26,7 +26,7 @@ public class AkunController {
     public String AkunTambahPage(Model model) {
         model.addAttribute("tambahakun", new Akun());
 
-        return "";
+        return "inputakun";
     }
 
     @RequestMapping(value = "/akuninput", method = RequestMethod.POST)
@@ -36,7 +36,7 @@ public class AkunController {
         model.addAttribute("BanyakAkun", list);
         String pesan = "Akun berhasil disimpan";
 
-        return "";
+        return "akun";
     }
 
     @RequestMapping(value = "/akuntampil", method = RequestMethod.GET)
@@ -47,19 +47,19 @@ public class AkunController {
         return "akun";
     }
 
-    @RequestMapping(value = "/akunedit/{kodeakun}", method = RequestMethod.GET)
-    public ModelAndView AkunEditPage(@PathVariable String kodeakun) {
+    @RequestMapping(value = "/akunedit/{userakun}", method = RequestMethod.GET)
+    public ModelAndView AkunEditPage(@PathVariable String userakun) {
         ModelAndView mav = new ModelAndView("editakun");
 
-        Akun akun = akunservice.getAkun(kodeakun);
-        mav.addObject("tbakun", akun);
+        Akun akun = akunservice.getAkun(userakun);
+        mav.addObject("ubahakun", akun);
 
         return mav;
     }
     
 
     @RequestMapping(value = "/akunedit/{userakun}", method = RequestMethod.POST)
-    public ModelAndView AkunEditingPage(@ModelAttribute Akun akun, @PathVariable String kodeakun) {
+    public ModelAndView AkunEditingPage(@ModelAttribute Akun akun, @PathVariable String userakun) {
         ModelAndView mav = new ModelAndView("akun");
         akunservice.updateAkun(akun);
 

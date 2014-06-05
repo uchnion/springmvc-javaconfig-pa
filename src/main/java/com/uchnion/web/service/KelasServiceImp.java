@@ -36,8 +36,7 @@ public class KelasServiceImp implements KelasService{
     @Override
     @Transactional(readOnly = true)
     public Kelas getKelas(String kodekelas) {
-        daokelas.getKelas(kodekelas);
-        return null;
+        return daokelas.getKelas(kodekelas);
     }
 
     @Override

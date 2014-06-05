@@ -13,14 +13,14 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Service
 @Transactional
-public class SiswaServiceImp implements SiswaService{
-    
+public class SiswaServiceImp implements SiswaService {
+
     @Autowired
     private DaoSiswa daosiswa;
 
     @Override
     public void insertSiswa(Siswa siswa) {
-       daosiswa.inserSiswa(siswa);
+        daosiswa.inserSiswa(siswa);
     }
 
     @Override
@@ -36,8 +36,7 @@ public class SiswaServiceImp implements SiswaService{
     @Override
     @Transactional(readOnly = true)
     public Siswa getSiswa(Integer id) {
-        daosiswa.getSiswa(id);
-        return null;
+        return daosiswa.getSiswa(id);
     }
 
     @Override
@@ -49,6 +48,5 @@ public class SiswaServiceImp implements SiswaService{
     public List<Siswa> getAllSiswa() {
         return daosiswa.getAllSiswa();
     }
-    
-   
+
 }

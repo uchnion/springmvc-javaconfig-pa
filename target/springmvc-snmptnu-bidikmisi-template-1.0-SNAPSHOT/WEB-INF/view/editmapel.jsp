@@ -91,10 +91,16 @@
                     </div>
 
 
-                    <form:form commandName="ubah" action="${pageContext.request.contextPath}/mapeledit/${ubah.kodemapel}"
+                    <form:form commandName="ubahmapel" action="${pageContext.request.contextPath}/mapeledit/${ubahmapel.kodemapel}"
                                class="bs-docs-example form-horizontal" method="POST">
 
-                        
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Kode Mata Pelajaran :</label>
+                            <div class="controls">
+                                <form:input path="kodemapel" readonly="true"/>
+                            </div>
+                        </div>
+
                         <div class="control-group info">
                             <label class="control-label" for="inputInfo">Kode Mata Pelajaran :</label>
                             <div class="controls">
@@ -133,8 +139,6 @@
                 <p>All rights reserved.</p>
             </div>
         </footer>
-
-
 
         <!-- javascript
         ================================================== -->

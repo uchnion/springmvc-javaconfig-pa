@@ -12,12 +12,12 @@ import org.springframework.stereotype.Repository;
  * @author Marojahan
  */
 @Repository
-public class DaoSiswaImp implements DaoSiswa{
-    
+public class DaoSiswaImp implements DaoSiswa {
+
     @Autowired
     private SessionFactory SessionFactory;
-    
-    private Session getSessionFactory(){
+
+    private Session getSessionFactory() {
         return SessionFactory.getCurrentSession();
     }
 
@@ -29,8 +29,8 @@ public class DaoSiswaImp implements DaoSiswa{
     @Override
     public void updateSiswa(Siswa siswa) {
         Siswa SiswaUp = getSiswa(siswa.getId());
-        
-        if (SiswaUp != null){
+
+        if (SiswaUp != null) {
             SiswaUp.setNis(siswa.getNis());
             SiswaUp.setNama(siswa.getNama());
             SiswaUp.setJk_kelamin(siswa.getJk_kelamin());
@@ -38,7 +38,7 @@ public class DaoSiswaImp implements DaoSiswa{
             SiswaUp.setTanggal_l(siswa.getTanggal_l());
             SiswaUp.setAlamat(siswa.getAlamat());
             SiswaUp.setGaji_ortu(siswa.getGaji_ortu());
-            
+
             getSessionFactory().update(SiswaUp);
         }
     }
@@ -46,22 +46,22 @@ public class DaoSiswaImp implements DaoSiswa{
     @Override
     public void deleteSiswa(Integer id) {
         Siswa siswaDel = getSiswa(id);
-        
-        if(siswaDel !=null){
+
+        if (siswaDel != null) {
             getSessionFactory().delete(siswaDel);
         }
     }
 
     @Override
     public Siswa getSiswa(Integer id) {
-        return (Siswa)getSessionFactory().get(Siswa.class, id);
+        return (Siswa) getSessionFactory().get(Siswa.class, id);
     }
 
     @Override
     public void selectSiswa(Siswa siswa) {
         Siswa SiswaSel = getSiswa(siswa.getId());
-        
-        if(SiswaSel != null){
+
+        if (SiswaSel != null) {
             SiswaSel.setNis(siswa.getNis());
             SiswaSel.setNama(siswa.getNama());
             SiswaSel.setJk_kelamin(siswa.getJk_kelamin());
@@ -69,9 +69,9 @@ public class DaoSiswaImp implements DaoSiswa{
             SiswaSel.setTanggal_l(siswa.getTanggal_l());
             SiswaSel.setAlamat(siswa.getAlamat());
             SiswaSel.setGaji_ortu(siswa.getGaji_ortu());
-            
+
             getSessionFactory().update(SiswaSel);
-            
+
         }
     }
 
@@ -79,5 +79,5 @@ public class DaoSiswaImp implements DaoSiswa{
     public List<Siswa> getAllSiswa() {
         return getSessionFactory().createCriteria(Siswa.class).list();
     }
-    
+
 }

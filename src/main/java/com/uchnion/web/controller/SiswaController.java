@@ -18,10 +18,10 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 public class SiswaController {
-    
+
     @Autowired
     public SiswaService siswaservice;
-    
+
     @RequestMapping(value = "/siswainput", method = RequestMethod.GET)
     public String SiswaTambahPage(Model model) {
         model.addAttribute("tambahsiswa", new Siswa());
@@ -30,8 +30,8 @@ public class SiswaController {
     }
 
     @RequestMapping(value = "/siswainput", method = RequestMethod.POST)
-    public String SiswaTambahinPage(Model model, @ModelAttribute Siswa tbsiswa) {
-        siswaservice.insertSiswa(tbsiswa);
+    public String SiswaTambahinPage(Model model, @ModelAttribute Siswa tambahsiswa) {
+        siswaservice.insertSiswa(tambahsiswa);
         List<Siswa> list = siswaservice.getAllSiswa();
         model.addAttribute("BanyakSiswa", list);
         String pesan = "Siswa berhasil disimpan";
@@ -56,7 +56,6 @@ public class SiswaController {
 
         return mav;
     }
-    
 
     @RequestMapping(value = "/siswaedit/{kodesiswa}", method = RequestMethod.POST)
     public ModelAndView SiswaEditingPage(@ModelAttribute Siswa siswa, @PathVariable Integer id) {
@@ -66,8 +65,8 @@ public class SiswaController {
         String pesan = "Siswa berhasil diperbaharui";
         mav.addObject("pesan", pesan);
 
-        List<Siswa> list= siswaservice.getAllSiswa();
-        mav.addObject("BanyakSiswa",list);
+        List<Siswa> list = siswaservice.getAllSiswa();
+        mav.addObject("BanyakSiswa", list);
         return mav;
     }
 
@@ -81,5 +80,5 @@ public class SiswaController {
 
         return "siswa";
     }
-    
+
 }
