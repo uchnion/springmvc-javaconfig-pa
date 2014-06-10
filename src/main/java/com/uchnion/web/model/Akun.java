@@ -43,6 +43,4 @@ public class Akun implements Serializable {
         this.passakun = passakun;
     }
     
-    
-
 }
