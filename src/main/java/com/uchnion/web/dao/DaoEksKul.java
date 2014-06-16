@@ -13,9 +13,9 @@ public interface DaoEksKul {
     
     void updateEksKul (EksKul eksKul);
     
-    void deleteEksKul (String id_ekskul);
+    void deleteEksKul (Integer ekskulid);
     
-    EksKul getEksKul (String id_ekskul);
+    EksKul getEksKul (Integer ekskulid);
     
     void selectEksKul (EksKul eksKul);
     

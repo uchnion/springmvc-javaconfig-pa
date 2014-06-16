@@ -29,9 +29,10 @@ public class DaoKelasImp implements DaoKelas{
 
     @Override
     public void updateKelas(Kelas kelas) {
-       Kelas KelasUp = getKelas(kelas.getKodekelas());
+       Kelas KelasUp = getKelas(kelas.getKelasid());
        
        if(KelasUp != null){
+           KelasUp.setKodekelas(kelas.getKodekelas());
            KelasUp.setNamakelas(kelas.getNamakelas());
            KelasUp.setTahunajaran(kelas.getTahunajaran());
            
@@ -40,22 +41,23 @@ public class DaoKelasImp implements DaoKelas{
     }
 
     @Override
-    public void deleteKelas(String kodekelas) {
-        Kelas KelasDel = getKelas(kodekelas);
+    public void deleteKelas(Integer kelasid) {
+        Kelas KelasDel = getKelas(kelasid);
         if (KelasDel != null){
             getSessionFactory().delete(KelasDel);
         }
     }
 
     @Override
-    public Kelas getKelas(String kodekelas) {
-        return (Kelas)getSessionFactory().get(Kelas.class, kodekelas);
+    public Kelas getKelas(Integer kelasid) {
+        return (Kelas)getSessionFactory().get(Kelas.class, kelasid);
     }
 
     @Override
     public void selectKelas(Kelas kelas) {
-        Kelas KelasSel = getKelas(kelas.getKodekelas());
+        Kelas KelasSel = getKelas(kelas.getKelasid());
         if (KelasSel != null){
+            KelasSel.setKodekelas(kelas.getKodekelas());
             KelasSel.setNamakelas(kelas.getNamakelas());
             KelasSel.setTahunajaran(kelas.getTahunajaran());
             

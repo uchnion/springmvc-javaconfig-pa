@@ -3,6 +3,7 @@ package com.uchnion.web.model;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -14,6 +15,12 @@ public class Mapel implements Serializable {
     private static final long serialVersionID = 1L;
 
     @Id
+    @NotNull
+    @GeneratedValue
+    @Column(name = "KODEMAPEL", nullable = false, length = 20)
+    private Integer mapelid;
+    
+    
     @NotNull
     @Column(name = "KODEMAPEL", nullable = false, length = 20)
     private String kodemapel;
@@ -52,4 +59,13 @@ public class Mapel implements Serializable {
         this.kkm = kkm;
     }
 
+    public Integer getMapelid() {
+        return mapelid;
+    }
+
+    public void setMapelid(Integer mapelid) {
+        this.mapelid = mapelid;
+    }
+
+    
 }

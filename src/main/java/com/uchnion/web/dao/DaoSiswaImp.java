@@ -22,7 +22,7 @@ public class DaoSiswaImp implements DaoSiswa {
     }
 
     @Override
-    public void inserSiswa(Siswa siswa) {
+    public void insertSiswa(Siswa siswa) {
         getSessionFactory().save(siswa);
     }
 

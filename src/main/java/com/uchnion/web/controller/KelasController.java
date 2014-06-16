@@ -47,19 +47,19 @@ public class KelasController {
         return "kelas";
     }
 
-    @RequestMapping(value = "/kelasedit/{kodekelas}", method = RequestMethod.GET)
-    public ModelAndView KelasEditPage(@PathVariable String kodekelas) {
+    @RequestMapping(value = "/kelasedit/{kelasid}", method = RequestMethod.GET)
+    public ModelAndView KelasEditPage(@PathVariable Integer kelasid) {
         ModelAndView mav = new ModelAndView("editkelas");
 
-        Kelas kelas = kelasservice.getKelas(kodekelas);
+        Kelas kelas = kelasservice.getKelas(kelasid);
         mav.addObject("ubahkelas", kelas);
 
         return mav;
     }
     
 
-    @RequestMapping(value = "/kelasedit/{kodekelas}", method = RequestMethod.POST)
-    public ModelAndView KelasEditingPage(@ModelAttribute Kelas kelas, @PathVariable String kodekelas) {
+    @RequestMapping(value = "/kelasedit/{kelasid}", method = RequestMethod.POST)
+    public ModelAndView KelasEditingPage(@ModelAttribute Kelas kelas, @PathVariable Integer kelasid) {
         ModelAndView mav = new ModelAndView("kelas");
         kelasservice.updateKelas(kelas);
 
@@ -71,9 +71,9 @@ public class KelasController {
         return mav;
     }
 
-    @RequestMapping(value = "/kelasdelete/{kodekelas}", method = RequestMethod.GET)
-    public String DeleteKelasPage(@PathVariable String kodekelas, Model model) {
-        kelasservice.deleteKelas(kodekelas);
+    @RequestMapping(value = "/kelasdelete/{kelasid}", method = RequestMethod.GET)
+    public String DeleteKelasPage(@PathVariable Integer kelasid, Model model) {
+        kelasservice.deleteKelas(kelasid);
         List<Kelas> list = kelasservice.getAllKelas();
         model.addAttribute("BanyakKelas", list);
         String pesan = "Mata Pelajaran berhasil di hapus";

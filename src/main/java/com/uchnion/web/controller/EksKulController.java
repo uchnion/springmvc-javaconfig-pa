@@ -47,19 +47,19 @@ public class EksKulController {
         return "ekskul";
     }
 
-    @RequestMapping(value = "/ekskuledit/{id_ekskul}", method = RequestMethod.GET)
-    public ModelAndView EksKulEditPage(@PathVariable String id_ekskul) {
+    @RequestMapping(value = "/ekskuledit/{ekskulid}", method = RequestMethod.GET)
+    public ModelAndView EksKulEditPage(@PathVariable Integer ekskulid) {
         ModelAndView mav = new ModelAndView("editekskul");
 
-        EksKul ekskul = ekskulservice.getEksKul(id_ekskul);
+        EksKul ekskul = ekskulservice.getEksKul(ekskulid);
         mav.addObject("ubahekskul", ekskul);
 
         return mav;
     }
     
 
-    @RequestMapping(value = "/ekskuledit/{id_ekskul}", method = RequestMethod.POST)
-    public ModelAndView EksKulEditingPage(@ModelAttribute EksKul ekskul, @PathVariable String id_ekskul) {
+    @RequestMapping(value = "/ekskuledit/{ekskulid}", method = RequestMethod.POST)
+    public ModelAndView EksKulEditingPage(@ModelAttribute EksKul ekskul, @PathVariable Integer ekskulid) {
         ModelAndView mav = new ModelAndView("ekskul");
         ekskulservice.updateEksKul(ekskul);
 
@@ -71,9 +71,9 @@ public class EksKulController {
         return mav;
     }
 
-    @RequestMapping(value = "/ekskuldelete/{id_ekskul}", method = RequestMethod.GET)
-    public String DeleteEksKulPage(@PathVariable String id_ekskul, Model model) {
-        ekskulservice.deleteEksKul(id_ekskul);
+    @RequestMapping(value = "/ekskuldelete/{ekskulid}", method = RequestMethod.GET)
+    public String DeleteEksKulPage(@PathVariable Integer ekskulid, Model model) {
+        ekskulservice.deleteEksKul(ekskulid);
         List<EksKul> list = ekskulservice.getAllEksKul();
         model.addAttribute("BanyakEksKul", list);
         String pesan = "Ekstra Kulikuler berhasil di hapus";

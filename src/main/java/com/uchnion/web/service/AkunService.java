@@ -13,9 +13,9 @@ public interface AkunService {
     
     void updateAkun (Akun akun);
     
-    void deleteAkun (String userakun);
+    void deleteAkun (Integer akunid);
     
-    Akun getAkun (String userakun);
+    Akun getAkun (Integer akunid);
     
     void selectAkun (Akun akun);
     

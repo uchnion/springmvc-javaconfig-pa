@@ -20,7 +20,7 @@ public class SiswaServiceImp implements SiswaService {
 
     @Override
     public void insertSiswa(Siswa siswa) {
-        daosiswa.inserSiswa(siswa);
+        daosiswa.insertSiswa(siswa);
     }
 
     @Override

@@ -14,9 +14,9 @@ public interface DaoMapel {
     
     void updateMapel (Mapel mapel);
     
-    void deleteMapel (String kodemapel);
+    void deleteMapel (Integer mapelid);
     
-    Mapel getMapel (String kodemapel);
+    Mapel getMapel (Integer mapelid);
     
     void selectMapel (Mapel mapel);
     

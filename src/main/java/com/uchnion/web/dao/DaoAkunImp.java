@@ -28,8 +28,9 @@ public class DaoAkunImp implements DaoAkun{
 
     @Override
     public void updateAkun(Akun akun) {
-        Akun AkunUp = getAkun(akun.getUserakun());
+        Akun AkunUp = getAkun(akun.getAkunid());
         if (AkunUp != null){
+            AkunUp.setUserakun(akun.getUserakun());
             AkunUp.setPassakun(akun.getPassakun());
             
             getSessionFactory().update(AkunUp);
@@ -38,24 +39,25 @@ public class DaoAkunImp implements DaoAkun{
     }
 
     @Override
-    public void deleteAkun(String userakun) {
-        Akun AkunDel = getAkun(userakun);
-        
+    public void deleteAkun(Integer akunid) {
+        Akun AkunDel = getAkun(akunid);
         if(AkunDel != null){
+            
             getSessionFactory() .delete(AkunDel);
         }
     }
 
     @Override
-    public Akun getAkun(String userakun) {
-        return (Akun)getSessionFactory().get(Akun.class, userakun);
+    public Akun getAkun(Integer akunid) {
+        return (Akun)getSessionFactory().get(Akun.class, akunid);
     }
 
     @Override
     public void selectAkun(Akun akun) {
-        Akun AkunSel = getAkun(akun.getUserakun());
+        Akun AkunSel = getAkun(akun.getAkunid());
         
         if (AkunSel != null){
+            AkunSel.setUserakun(akun.getUserakun());
             AkunSel.setPassakun(akun.getPassakun());
             
             getSessionFactory().update(AkunSel);

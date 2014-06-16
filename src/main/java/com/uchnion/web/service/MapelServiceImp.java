@@ -29,14 +29,14 @@ public class MapelServiceImp implements MapelService{
     }
 
     @Override   
-    public void deleteMapel(String kodemapel) {
-        daomapel.deleteMapel(kodemapel);
+    public void deleteMapel(Integer mapelid) {
+        daomapel.deleteMapel(mapelid);
     }
 
     @Override
     @Transactional(readOnly = true)
-    public Mapel getMapel(String kodemapel) {
-        return daomapel.getMapel(kodemapel);
+    public Mapel getMapel(Integer mapelid) {
+        return daomapel.getMapel(mapelid);
     }
 
     @Override

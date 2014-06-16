@@ -9,7 +9,7 @@ import java.util.List;
  */
 public interface DaoSiswa {
 
-    void inserSiswa(Siswa siswa);
+    void insertSiswa(Siswa siswa);
 
     void updateSiswa(Siswa siswa);
 

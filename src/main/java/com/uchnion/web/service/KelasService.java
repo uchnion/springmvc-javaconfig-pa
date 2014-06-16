@@ -13,9 +13,9 @@ public interface KelasService {
     
     void updateKelas (Kelas kelas);
     
-    void deleteKelas (String kodekelas);
+    void deleteKelas (Integer kelasid);
     
-    Kelas getKelas (String kodekelas);
+    Kelas getKelas (Integer kelasid);
     
     void selectKelas (Kelas kelas);
     

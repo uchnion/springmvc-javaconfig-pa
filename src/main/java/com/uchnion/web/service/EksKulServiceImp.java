@@ -29,14 +29,14 @@ public class EksKulServiceImp implements EksKulService{
     }
 
     @Override
-    public void deleteEksKul(String id_ekskul) {
-        daoekskul.deleteEksKul(id_ekskul);
+    public void deleteEksKul(Integer ekskulid) {
+        daoekskul.deleteEksKul(ekskulid);
     }
 
     @Override
     @Transactional(readOnly = true)
-    public EksKul getEksKul(String id_ekskul) {
-        return daoekskul.getEksKul(id_ekskul);
+    public EksKul getEksKul(Integer ekskulid) {
+        return daoekskul.getEksKul(ekskulid);
     }
 
     @Override

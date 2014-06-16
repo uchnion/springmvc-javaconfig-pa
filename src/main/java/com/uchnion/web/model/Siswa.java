@@ -12,7 +12,6 @@ import javax.validation.constraints.NotNull;
  *
  * @author Marojahan
  */
-
 @Entity
 @Table(name = "SISWA")
 public class Siswa implements Serializable {
@@ -21,124 +20,123 @@ public class Siswa implements Serializable {
 
     @Id
     @GeneratedValue
-    @Column(name = "ID")
+    @Column(name = "SISWAID")
     private Integer id;
 
     @NotNull
-    @Column(nullable = false, length = 20)
+    @Column(name = "NIS", nullable = false, length = 20)
     private String nis;
-    
+
     @NotNull
-    @Column(nullable = false, length = 120)
+    @Column(name = "NAMA", nullable = false, length = 120)
     private String nama;
-    
+
     @NotNull
-    @Column(nullable = false, length = 50)
+    @Column(name = "TEMPAT_LAHIR", nullable = false, length = 50)
     private String tempat_l;
-    
+
     @NotNull
-    @Column(nullable = false, length = 20)
+    @Column(name = "TANGGAL_LAHIR", nullable = false, length = 20)
     private String tanggal_l;
-    
+
     @NotNull
-    @Column(nullable = false, length = 20)
+    @Column(name = "JENIS_KELAMIN",nullable = false, length = 20)
     private String jeniskelamin;
-    
+
     @NotNull
-    @Column(nullable = false, length = 30)
+    @Column(name = "AGAMA",nullable = false, length = 30)
     private String agama;
-    
+
     @NotNull
-    @Column(nullable = false, length = 20)
+    @Column(name = "ANAK_KE",nullable = false, length = 20)
     private String anak_ke;
-    
+
     @NotNull
-    @Column(nullable = false, length = 30)
+    @Column(name = "STATUS_KELUARGA",nullable = false, length = 30)
     private String statinkeluarga;
-    
+
     @NotNull
-    @Column(nullable = false, length = 200)
+    @Column(name ="ALAMAT" ,nullable = false, length = 200)
     private String alamat;
-    
+
     @NotNull
-    @Column(nullable = false, length = 20)
+    @Column(name ="TELEPON",nullable = false, length = 20)
     private String telepon;
-    
-    @Column(nullable = false,length = 10)
+
+    @Column(name = "DIKELAS",nullable = false, length = 10)
     private String dikelas;
-    
-    @Column(nullable = false,length = 20)
+
+    @Column(name = "PADA_TANGGAL",nullable = false, length = 20)
     private String padatgl;
-    
-    @Column(nullable = false, length = 20)
+
+    @Column(name = "SEMESTER",nullable = false, length = 20)
     private String semester;
-    
+
     @NotNull
-    @Column(nullable = false, length = 120)
+    @Column(name = "SEKOLAH_ASAL",nullable = false, length = 120)
     private String skol_asal;
-    
+
     @NotNull
-    @Column(nullable = false, length = 200)
+    @Column(name = "ALMSEKOLAH_ASAL",nullable = false, length = 200)
     private String almskol_asal;
-    
+
     @NotNull
-    @Column(nullable = false, length = 10)
+    @Column(name = "IJAZAH_TAHUN",nullable = false, length = 10)
     private String ijazahtahun;
-    
+
     @NotNull
-    @Column(nullable = false, length = 30)
+    @Column(name = "IJAZAH_NO",nullable = false, length = 30)
     private String ijazahno;
-    
+
     @NotNull
-    @Column(nullable = false, length = 10)
+    @Column(name = "SKHUN_TAHUN",nullable = false, length = 10)
     private String skhuntahun;
-    
+
     @NotNull
-    @Column(nullable = false, length = 30)
+    @Column(name = "SKHUN_NOnullable",nullable = false, length = 30)
     private String skhunno;
-    
+
     @NotNull
-    @Column(nullable = false, length = 120)
+    @Column(name = "NAMA_AYAH",nullable = false, length = 120)
     private String namaayah;
-    
+
     @NotNull
-    @Column(nullable = false, length = 120)
+    @Column(name = "NAMA_IBU",nullable = false, length = 120)
     private String namaibu;
-    
-    @Column(nullable = false, length = 120)
+
+    @Column(name = "ALAMAT_ORTU",nullable = false, length = 120)
     private String alamatortu;
-    
-    @Column(nullable = false, length = 20)
+
+    @Column(name = "TELEPON_ORTU",nullable = false, length = 20)
     private String telepon_ortu;
-    
-    @Column(nullable = false, length = 120)
+
+    @Column(name = "KERJA_AYAH",nullable = false, length = 120)
     private String kerjaayah;
-    
-    @Column(nullable = false, length = 120)
+
+    @Column(name = "KERJA_IBU",nullable = false, length = 120)
     private String kerjaibu;
-    
+
     @NotNull
-    @Column(nullable = false)
+    @Column(name = "GAJI_ORTU",nullable = false)
     private Integer gaji_ortu;
-    
-    @Column(nullable = false, length = 100)
+
+    @Column(name = "NAMA_WALI",nullable = false, length = 100)
     private String namawali;
-    
-    @Column(nullable = false, length = 200)
+
+    @Column(name = "ALAMAT_WALI",nullable = false, length = 200)
     private String alamatwali;
-    
-    @Column(nullable = false, length = 20)
+
+    @Column(name = "TELEPON_WALI",nullable = false, length = 20)
     private String teleponwali;
-    
-    @Column(nullable = false, length = 100)
+
+    @Column(name = "KERJA_WALI",nullable = false, length = 100)
     private String kerjawali;
-    
-    @Column(nullable = false)
+
+    @Column(name = "GAJI_WALI",nullable = false)
     private Integer penghasilan_wali;
-    
+
     //Create Getter and Setter
     //=====================================//
-    
     public Integer getId() {
         return id;
     }
@@ -394,5 +392,5 @@ public class Siswa implements Serializable {
     public void setPenghasilan_wali(Integer penghasilan_wali) {
         this.penghasilan_wali = penghasilan_wali;
     }
-    
+
 }

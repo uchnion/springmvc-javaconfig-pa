@@ -29,14 +29,14 @@ public class AkunServiceImp implements AkunService{
     }
 
     @Override
-    public void deleteAkun(String userakun) {
-        daoakun.deleteAkun(userakun);
+    public void deleteAkun(Integer akunid) {
+        daoakun.deleteAkun(akunid);
     }
 
     @Override
     @Transactional(readOnly = true)
-    public Akun getAkun(String userakun) {
-        return daoakun.getAkun(userakun);
+    public Akun getAkun(Integer akunid) {
+        return daoakun.getAkun(akunid);
     }
 
     @Override

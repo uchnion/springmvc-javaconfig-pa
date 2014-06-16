@@ -9,15 +9,15 @@ import com.uchnion.web.model.EksKul;
  */
 public interface EksKulService {
     
-    void insertEksKul (EksKul ekskul);
+    void insertEksKul (EksKul eksKul);
     
-    void updateEksKul (EksKul ekskul);
+    void updateEksKul (EksKul eksKul);
     
-    void deleteEksKul (String id_ekskul);
+    void deleteEksKul (Integer ekskulid);
     
-    EksKul getEksKul (String id_ekskul);
+    EksKul getEksKul (Integer ekskulid);
     
-    void selectEksKul (EksKul ekskul);
+    void selectEksKul (EksKul eksKul);
     
     List<EksKul>getAllEksKul();
     

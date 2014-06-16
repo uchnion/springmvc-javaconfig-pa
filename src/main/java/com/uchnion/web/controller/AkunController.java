@@ -47,19 +47,19 @@ public class AkunController {
         return "akun";
     }
 
-    @RequestMapping(value = "/akunedit/{userakun}", method = RequestMethod.GET)
-    public ModelAndView AkunEditPage(@PathVariable String userakun) {
+    @RequestMapping(value = "/akunedit/{akunid}", method = RequestMethod.GET)
+    public ModelAndView AkunEditPage(@PathVariable Integer akunid) {
         ModelAndView mav = new ModelAndView("editakun");
 
-        Akun akun = akunservice.getAkun(userakun);
+        Akun akun = akunservice.getAkun(akunid);
         mav.addObject("ubahakun", akun);
 
         return mav;
     }
     
 
-    @RequestMapping(value = "/akunedit/{userakun}", method = RequestMethod.POST)
-    public ModelAndView AkunEditingPage(@ModelAttribute Akun akun, @PathVariable String userakun) {
+    @RequestMapping(value = "/akunedit/{akunid}", method = RequestMethod.POST)
+    public ModelAndView AkunEditingPage(@ModelAttribute Akun akun, @PathVariable Integer akunid) {
         ModelAndView mav = new ModelAndView("akun");
         akunservice.updateAkun(akun);
 
@@ -71,9 +71,9 @@ public class AkunController {
         return mav;
     }
 
-    @RequestMapping(value = "/akundelete/{userakun}", method = RequestMethod.GET)
-    public String DeleteAkunPage(@PathVariable String userakun, Model model) {
-        akunservice.deleteAkun(userakun);
+    @RequestMapping(value = "/akundelete/{akunid}", method = RequestMethod.GET)
+    public String DeleteAkunPage(@PathVariable Integer akunid, Model model) {
+        akunservice.deleteAkun(akunid);
         List<Akun> list = akunservice.getAllAkun();
         model.addAttribute("BanyakAkun", list);
         String pesan = "Mata Pelajaran berhasil di hapus";
