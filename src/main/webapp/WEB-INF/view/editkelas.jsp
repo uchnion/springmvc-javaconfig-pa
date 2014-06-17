@@ -91,7 +91,7 @@
                     </div>
 
 
-                    <form:form commandName="ubahkelas" action="${pageContext.request.contextPath}/kelasedit/${ubahkelas.kodekelas}"
+                    <form:form commandName="ubahkelas" action="${pageContext.request.contextPath}/kelasedit/${ubahkelas.kelasid}"
                                class="bs-docs-example form-horizontal" method="POST">
 
                         

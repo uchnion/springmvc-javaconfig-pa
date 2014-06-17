@@ -1,0 +1,8 @@
+0:0:0:0:0:0:0:1 - - [16/Jun/2014:15:54:33 +0700] "GET /sman3seluma/ekskultampil HTTP/1.1" 200 6483 http-bio-8080-exec-1 2628
+0:0:0:0:0:0:0:1 - - [16/Jun/2014:15:54:34 +0700] "GET /sman3seluma/assets/css/bootstrap.css HTTP/1.1" 304 - http-bio-8080-exec-3 26
+0:0:0:0:0:0:0:1 - - [16/Jun/2014:15:54:34 +0700] "GET /sman3seluma/assets/css/docs.css HTTP/1.1" 304 - http-bio-8080-exec-4 22
+0:0:0:0:0:0:0:1 - - [16/Jun/2014:15:54:34 +0700] "GET /sman3seluma/assets/css/prettify.css HTTP/1.1" 304 - http-bio-8080-exec-5 37
+0:0:0:0:0:0:0:1 - - [16/Jun/2014:15:54:34 +0700] "GET /sman3seluma/assets/css/bootstrap-responsive.css HTTP/1.1" 304 - http-bio-8080-exec-2 24
+0:0:0:0:0:0:0:1 - - [16/Jun/2014:15:54:34 +0700] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8080-exec-9 0
+0:0:0:0:0:0:0:1 - - [16/Jun/2014:15:54:55 +0700] "GET /sman3seluma/ekskulinput HTTP/1.1" 200 6295 http-bio-8080-exec-10 432
+0:0:0:0:0:0:0:1 - - [16/Jun/2014:15:55:19 +0700] "POST /sman3seluma/ekskulinput HTTP/1.1" 200 7296 http-bio-8080-exec-10 263

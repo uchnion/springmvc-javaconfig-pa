@@ -91,14 +91,14 @@
                     </div>
 
 
-                    <form:form commandName="ubahakun" action="${pageContext.request.contextPath}/akunedit/${ubahakun.userakun}"
+                    <form:form commandName="ubahakun" action="${pageContext.request.contextPath}/akunedit/${ubahakun.akunid}"
                                class="bs-docs-example form-horizontal" method="POST">
 
                         
                         <div class="control-group info">
                             <label class="control-label" for="inputInfo">Username :</label>
                             <div class="controls">
-                                <form:input path="userakun" disabled="true"/>
+                                <form:input path="userakun"/>
                             </div>
                         </div>
                         <div class="control-group info">

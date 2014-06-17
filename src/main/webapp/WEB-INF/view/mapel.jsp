@@ -126,12 +126,12 @@
                             <tbody>
                                 <tr>
 
-                                    <td></td>
+                                    <td> ${mapel.mapelid}</td>
                                     <td> ${mapel.namamapel} </td>
                                     <td> ${mapel.kodemapel} </td>
                                     <td> ${mapel.kkm} </td>
-                                    <td><a href="${pageContext.request.contextPath}/mapeledit/${mapel.kodemapel}" onclick="">Edit</a>&nbsp;&nbsp;|&nbsp;|&nbsp;&nbsp;
-                                        <a href="${pageContext.request.contextPath}/mapeldelete/${mapel.kodemapel}" onclick="return confirm('Apakah Anda yakin akan menghapus mata pelajaran ${mapel.namamapel} ? ')">Hapus</a></td>
+                                    <td><a href="${pageContext.request.contextPath}/mapeledit/${mapel.mapelid}" onclick="">Edit</a>&nbsp;&nbsp;|&nbsp;|&nbsp;&nbsp;
+                                        <a href="${pageContext.request.contextPath}/mapeldelete/${mapel.mapelid}" onclick="return confirm('Apakah Anda yakin akan menghapus mata pelajaran ${mapel.namamapel} ? ')">Hapus</a></td>
 
                                 </tr>
                             </tbody>

@@ -126,12 +126,12 @@
                             <tbody>
                                 <tr>
 
-                                    <td></td>
+                                    <td>${kelas.kelasid}</td>
                                     <td> ${kelas.namakelas} </td>
                                     <td> ${kelas.kodekelas} </td>
                                     <td> ${kelas.tahunajaran} </td>
-                                    <td><a href="${pageContext.request.contextPath}/kelasedit/${kelas.kodekelas}" onclick="">Edit</a>&nbsp;&nbsp;|&nbsp;|&nbsp;&nbsp;
-                                        <a href="${pageContext.request.contextPath}/kelasdelete/${kelas.kodekelas}" onclick="return confirm('Apakah Anda yakin akan menghapus Kelas ${kelas.namakelas} pada tahun ajaran ${kelas.tahunajaran}? ')">Hapus</a></td>
+                                    <td><a href="${pageContext.request.contextPath}/kelasedit/${kelas.kelasid}" onclick="">Edit</a>&nbsp;&nbsp;|&nbsp;|&nbsp;&nbsp;
+                                        <a href="${pageContext.request.contextPath}/kelasdelete/${kelas.kelasid}" onclick="return confirm('Apakah Anda yakin akan menghapus Kelas ${kelas.namakelas} pada tahun ajaran ${kelas.tahunajaran}? ')">Hapus</a></td>
 
                                 </tr>
                             </tbody>

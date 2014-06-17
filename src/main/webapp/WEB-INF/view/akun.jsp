@@ -76,35 +76,8 @@
 
                 <div class="span9">
 
-                    <h3 style="text-align:center">REKAM KELAS SMAN 3 SELUMA</h3>
-                    <!--
+                    <h3 style="text-align:center">PENGELOLA SMAN 3 SELUMA</h3>
                     
-          <div class="control-group info">
-          <label class="control-label" for="inputInfo">Tahun Ajaran :</label>
-          <div class="controls">
-            <select class="span3">
-                    <option>2001/2002</option>
-                    <option>2002/2003</option>
-                    <option>2003/2004</option>
-                    <option>2004/2005</option>
-                    <option>2005/2006</option>
-            </select>
-          </div>
-        </div>
-                    
-          <div class="control-group info">
-          <label class="control-label" for="inputInfo">Kelas :</label>
-          <div class="controls">
-            <select class="span3">
-                    <option>X</option>
-                    <option>XI IPA</option>
-                    <option>XI IPS</option>
-                    <option>XII IPA</option>
-                    <option>XII IPS</option>
-          </select>
-          </div>
-        </div> 
-                    -->
                     <div class="pull-right">
                         <input type="text" class="input-medium search-query">
                         <button type="submit" class="btn">Search</button>
@@ -125,11 +98,11 @@
                             <tbody>
                                 <tr>
 
-                                    <td></td>
+                                    <td>${akun.akunid}</td>
                                     <td> ${akun.userakun} </td>
                                     <td> ${akun.passakun} </td>
-                                    <td><a href="${pageContext.request.contextPath}/akunedit/${akun.userakun}" onclick="">Edit</a>&nbsp;&nbsp;|&nbsp;|&nbsp;&nbsp;
-                                        <a href="${pageContext.request.contextPath}/akundelete/${akun.userakun}" onclick="return confirm('Apakah Anda yakin akan menghapus Akun ${akun.userakun} ')">Hapus</a></td>
+                                    <td><a href="${pageContext.request.contextPath}/akunedit/${akun.akunid}" onclick="">Edit</a>&nbsp;&nbsp;|&nbsp;|&nbsp;&nbsp;
+                                        <a href="${pageContext.request.contextPath}/akundelete/${akun.akunid}" onclick="return confirm('Apakah Anda yakin akan menghapus Akun ${akun.userakun} ')">Hapus</a></td>
 
                                 </tr>
                             </tbody>

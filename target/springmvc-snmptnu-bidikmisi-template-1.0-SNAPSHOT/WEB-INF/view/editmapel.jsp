@@ -91,13 +91,13 @@
                     </div>
 
 
-                    <form:form commandName="ubahmapel" action="${pageContext.request.contextPath}/mapeledit/${ubahmapel.kodemapel}"
+                    <form:form commandName="ubahmapel" action="${pageContext.request.contextPath}/mapeledit/${ubahmapel.mapelid}"
                                class="bs-docs-example form-horizontal" method="POST">
 
                         <div class="control-group info">
                             <label class="control-label" for="inputInfo">Kode Mata Pelajaran :</label>
                             <div class="controls">
-                                <form:input path="kodemapel" readonly="true"/>
+                                <form:input path="kodemapel"/>
                             </div>
                         </div>
 

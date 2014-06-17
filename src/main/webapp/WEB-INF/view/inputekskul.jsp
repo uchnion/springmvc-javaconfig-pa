@@ -92,7 +92,7 @@
                         <div class="control-group info">
                             <label class="control-label" for="inputInfo">Kode Ekskul :</label>
                             <div class="controls">
-                                <form:input path="id_ekskul"/>
+                                <form:input path="kode_ekskul"/>
                             </div>
                         </div>
                         <div class="control-group info">

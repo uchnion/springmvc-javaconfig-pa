@@ -91,14 +91,14 @@
                     </div>
 
 
-                    <form:form commandName="ubahekskul" action="${pageContext.request.contextPath}/ekskuledit/${ubahekskul.id_ekskul}"
+                    <form:form commandName="ubahekskul" action="${pageContext.request.contextPath}/ekskuledit/${ubahekskul.ekskulid}"
                                class="bs-docs-example form-horizontal" method="POST">
 
                         
                         <div class="control-group info">
                             <label class="control-label" for="inputInfo">Kode Ekskul :</label>
                             <div class="controls">
-                                <form:input path="id_ekskul" disabled="true"/>
+                                <form:input path="kode_ekskul"/>
                             </div>
                         </div>
                         <div class="control-group info">

@@ -126,13 +126,13 @@
                             <tbody>
                                 <tr>
 
-                                    <td></td>
-                                    <td> ${ekskul.id_ekskul} </td>
+                                    <td>${ekskul.ekskulid}</td>
+                                    <td> ${ekskul.kode_ekskul} </td>
                                     <td> ${ekskul.nama_ekskul} </td>
                                     <td> ${ekskul.keterangan} </td>
-                                    <td><a href="${pageContext.request.contextPath}/ekskuledit/${ekskul.id_ekskul}" 
+                                    <td><a href="${pageContext.request.contextPath}/ekskuledit/${ekskul.ekskulid}" 
                                            onclick="">Edit</a>&nbsp;&nbsp;|&nbsp;|&nbsp;&nbsp;
-                                        <a href="${pageContext.request.contextPath}/ekskuldelete/${ekskul.id_ekskul}" 
+                                        <a href="${pageContext.request.contextPath}/ekskuldelete/${ekskul.ekskulid}" 
                                            onclick="return confirm('Apakah Anda yakin akan menghapus ${ekskul.nama_ekskul}sebagai Ekstra Kulikuler di SMAN 3 Seluma ?')">Hapus</a></td>
 
                                 </tr>

@@ -17,19 +17,19 @@ public class Mapel implements Serializable {
     @Id
     @NotNull
     @GeneratedValue
-    @Column(name = "KODEMAPEL", nullable = false, length = 20)
+    @Column(name = "MAPEL_ID", nullable = false, length = 20)
     private Integer mapelid;
     
     
     @NotNull
-    @Column(name = "KODEMAPEL", nullable = false, length = 20)
+    @Column(name = "KODE_MAPEL", nullable = false, length = 20)
     private String kodemapel;
 
-    @Column(nullable = false, length = 40)
+    @Column(name = "NAMA_MAPEL",nullable = false, length = 40)
     @NotNull
     private String namamapel;
 
-    @Column(nullable = false)
+    @Column(name = "KKM",nullable = false)
     @NotNull
     private int kkm;
 
