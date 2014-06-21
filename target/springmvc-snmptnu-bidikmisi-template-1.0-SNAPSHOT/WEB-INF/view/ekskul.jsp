@@ -76,35 +76,8 @@
 
                 <div class="span9">
 
-                    <h3 style="text-align:center">REKAM KELAS SMAN 3 SELUMA</h3>
-                    <!--
+                    <h3 style="text-align:center">EKSTRA KULIKULER SMAN 3 SELUMA</h3>
                     
-          <div class="control-group info">
-          <label class="control-label" for="inputInfo">Tahun Ajaran :</label>
-          <div class="controls">
-            <select class="span3">
-                    <option>2001/2002</option>
-                    <option>2002/2003</option>
-                    <option>2003/2004</option>
-                    <option>2004/2005</option>
-                    <option>2005/2006</option>
-            </select>
-          </div>
-        </div>
-                    
-          <div class="control-group info">
-          <label class="control-label" for="inputInfo">Kelas :</label>
-          <div class="controls">
-            <select class="span3">
-                    <option>X</option>
-                    <option>XI IPA</option>
-                    <option>XI IPS</option>
-                    <option>XII IPA</option>
-                    <option>XII IPS</option>
-          </select>
-          </div>
-        </div> 
-                    -->
                     <div class="pull-right">
                         <input type="text" class="input-medium search-query">
                         <button type="submit" class="btn">Search</button>
@@ -114,26 +87,24 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Ekstra Kulikuler</th>
                                 <th>Kode Ekskul</th>
-                                <th>Materi</th>
+                                <th>Ekstra Kulikuler</th>
                                 <th>Keterangan</th>
                             </tr>
                         </thead>
 
-                        <c:forEach var="ekskul" items="${BanyakEksKul}">
+                        <c:forEach var="ekskul" items="${BanyakEkskul}">
 
                             <tbody>
                                 <tr>
 
-                                    <td>${ekskul.ekskulid}</td>
-                                    <td> ${ekskul.kode_ekskul} </td>
-                                    <td> ${ekskul.nama_ekskul} </td>
-                                    <td> ${ekskul.keterangan} </td>
-                                    <td><a href="${pageContext.request.contextPath}/ekskuledit/${ekskul.ekskulid}" 
+                                    <td>${ekskul.ekskulId}</td>
+                                    <td> ${ekskul.kodeEkskul} </td>
+                                    <td> ${ekskul.namaEkskul} </td>
+                                    <td><a href="${pageContext.request.contextPath}/ekskuledit/${ekskul.ekskulId}" 
                                            onclick="">Edit</a>&nbsp;&nbsp;|&nbsp;|&nbsp;&nbsp;
-                                        <a href="${pageContext.request.contextPath}/ekskuldelete/${ekskul.ekskulid}" 
-                                           onclick="return confirm('Apakah Anda yakin akan menghapus ${ekskul.nama_ekskul}sebagai Ekstra Kulikuler di SMAN 3 Seluma ?')">Hapus</a></td>
+                                        <a href="${pageContext.request.contextPath}/ekskuldelete/${ekskul.ekskulId}" 
+                                           onclick="return confirm('Apakah Anda yakin akan menghapus ${ekskul.namaEkskul}sebagai Ekstra Kulikuler di SMAN 3 Seluma ?')">Hapus</a></td>
 
                                 </tr>
                             </tbody>

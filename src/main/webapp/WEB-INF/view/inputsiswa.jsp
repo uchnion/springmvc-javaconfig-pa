@@ -116,10 +116,10 @@
                             <label class="control-label" for="inputInfo">Jenis Kelamin :</label>
                             <div class="controls">
                                 <label class="radio">
-                                    <form:radiobutton path="jeniskelamin" value="Laki-laki" />Laki-laki
+                                    <form:radiobutton path="jenisKelamin" value="Laki-laki" />Laki-laki
                                 </label>
                                 <label class="radio">
-                                    <form:radiobutton path="jeniskelamin" value="Perempuan" />Perempuan
+                                    <form:radiobutton path="jenisKelamin" value="Perempuan" />Perempuan
                                 </label>
                             </div>
                         </div>
@@ -140,7 +140,7 @@
                         <div class="control-group info">
                             <label class="control-label" for="inputInfo">Status dalam Keluarga :</label>
                             <div class="controls">
-                                <form:input path="statinkeluarga" />
+                                <form:input path="statinKeluarga" />
                             </div>
                         </div>
 
@@ -183,58 +183,11 @@
                         </div>
 
                         <div class="control-group info">
-                            <label class="control-label" for="inputInfo">Sekolah/Madrasah asal</label>
-                        </div>
-                        <div class="control-group info">
-                            <label class="control-label" for="inputInfo">Nama Sekolah/Madrasah</label>
+                            <label class="control-label" for="inputInfo">Nama Sekolah Asal</label>
                             <div class="controls">
                                 <form:input path="skol_asal"/>
                             </div>
                         </div>
-
-                        <div class="control-group info">
-                            <label class="control-label" for="inputInfo">Alamat :</label>
-                            <div class="controls">
-                                <form:textarea path="almskol_asal" rows="3"/>
-                            </div>
-                        </div>
-
-                        <div class="control-group info">
-                            <label class="control-label" for="inputInfo">Surat Tanda Lulus MTs/SMP</label>
-                        </div>
-
-                        <div class="control-group info">
-                            <label class="control-label" for="inputInfo">Tahun :</label>
-                            <div class="controls">
-                                <form:input path="ijazahtahun"/>
-                            </div>
-                        </div>
-
-                        <div class="control-group info">
-                            <label class="control-label" for="inputInfo">Nomor :</label>
-                            <div class="controls">
-                                <form:input path="ijazahno"/>
-                            </div>
-                        </div>
-
-                        <div class="control-group info">
-                            <label class="control-label" for="inputInfo">Surat Keterangan Hasil Ujian Nasional(SKHUN) SMP/MTs</label>
-                        </div>
-
-                        <div class="control-group info">
-                            <label class="control-label" for="inputInfo">Tahun :</label>
-                            <div class="controls">
-                                <form:input path="skhuntahun"/>
-                            </div>
-                        </div>
-
-                        <div class="control-group info">
-                            <label class="control-label" for="inputInfo">Nomor :</label>
-                            <div class="controls">
-                                <form:input path="skhunno"/>
-                            </div>
-                        </div>
-
                         <div class="control-group info">
                             <label class="control-label" for="inputInfo">Nama Orang Tua</label>
                         </div>
@@ -308,21 +261,21 @@
                         <div class="control-group info">
                             <label class="control-label" for="inputInfo">Alamat Wali :</label>
                             <div class="controls">
-                                <form:textarea path="alamatwali" rows="3"/>
+                                <form:textarea path="alamatWali" rows="3"/>
                             </div>
                         </div>
 
                         <div class="control-group info">
                             <label class="control-label" for="inputInfo">Telepon Wali :</label>
                             <div class="controls">
-                                <form:input path="teleponwali"/>
+                                <form:input path="teleponWali"/>
                             </div>
                         </div>
 
                         <div class="control-group info">
                             <label class="control-label" for="inputInfo">Pekerjaan Wali :</label>
                             <div class="controls">
-                                <form:input path="kerjawali"/>
+                                <form:input path="kerjaWali"/>
                             </div>
                         </div>
 
@@ -332,7 +285,7 @@
                                 <div class="input-prepend input-append">
                                     <span class="add-on">Rp.</span>
                                     <!--<input class="span2" id="appendedPrependedInput" type="text">-->
-                                    <form:input path="penghasilan_wali" class="span2"/>
+                                    <form:input path="gajiWali" class="span2"/>
                                     <span class="add-on">.00</span>
                                 </div>
                             </div>

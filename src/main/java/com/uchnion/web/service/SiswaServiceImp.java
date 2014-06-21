@@ -29,14 +29,14 @@ public class SiswaServiceImp implements SiswaService {
     }
 
     @Override
-    public void deleteSiswa(Integer id) {
-        daosiswa.deleteSiswa(id);
+    public void deleteSiswa(Integer siswaId) {
+        daosiswa.deleteSiswa(siswaId);
     }
 
     @Override
     @Transactional(readOnly = true)
-    public Siswa getSiswa(Integer id) {
-        return daosiswa.getSiswa(id);
+    public Siswa getSiswa(Integer siswaId) {
+        return daosiswa.getSiswa(siswaId);
     }
 
     @Override

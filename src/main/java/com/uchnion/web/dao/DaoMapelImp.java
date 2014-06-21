@@ -28,7 +28,7 @@ public class DaoMapelImp implements DaoMapel{
 
     @Override
     public void updateMapel(Mapel mapel) {
-       Mapel MapelUp = getMapel(mapel.getMapelid());
+       Mapel MapelUp = getMapel(mapel.getMapelId());
         
         if(MapelUp != null){
             MapelUp.setKodemapel(mapel.getKodemapel());
@@ -40,8 +40,8 @@ public class DaoMapelImp implements DaoMapel{
     }
 
     @Override
-    public void deleteMapel(Integer mapelid) {
-        Mapel MapelDel = getMapel(mapelid);
+    public void deleteMapel(Integer mapelId) {
+        Mapel MapelDel = getMapel(mapelId);
         
         if(MapelDel != null){
             getSessionFactory().delete(MapelDel);
@@ -49,13 +49,13 @@ public class DaoMapelImp implements DaoMapel{
     }
 
     @Override
-    public Mapel getMapel(Integer mapelid) {
-        return (Mapel)getSessionFactory().get(Mapel.class, mapelid);
+    public Mapel getMapel(Integer mapelId) {
+        return (Mapel)getSessionFactory().get(Mapel.class, mapelId);
     }
 
     @Override
     public void selectMapel(Mapel mapel) {
-        Mapel MapelSel = getMapel(mapel.getMapelid());
+        Mapel MapelSel = getMapel(mapel.getMapelId());
         
         if(MapelSel != null){
             MapelSel.setKodemapel(mapel.getKodemapel());

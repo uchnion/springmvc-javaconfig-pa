@@ -92,19 +92,13 @@
                         <div class="control-group info">
                             <label class="control-label" for="inputInfo">Kode Ekskul :</label>
                             <div class="controls">
-                                <form:input path="kode_ekskul"/>
+                                <form:input path="kodeEkskul"/>
                             </div>
                         </div>
                         <div class="control-group info">
-                            <label class="control-label" for="inputInfo">Ekstra Kulikuler :</label>
+                            <label class="control-label" for="inputInfo">Nama Ekskul :</label>
                             <div class="controls">
-                                <form:input path="nama_ekskul"/>
-                            </div>
-                        </div>
-                        <div class="control-group info">
-                            <label class="control-label" for="inputInfo">Materi :</label>
-                            <div class="controls">
-                                <form:textarea path="keterangan" rows="3"/>
+                                <form:input path="namaEkskul"/>
                             </div>
                         </div>
 

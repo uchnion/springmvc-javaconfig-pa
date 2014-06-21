@@ -13,9 +13,9 @@ public interface MapelService {
     
     void updateMapel (Mapel mapel);
     
-    void deleteMapel (Integer mapelid);
+    void deleteMapel (Integer mapelId);
     
-    Mapel getMapel (Integer mapelid);
+    Mapel getMapel (Integer mapelId);
     
     void selectMapel (Mapel mapel);
     

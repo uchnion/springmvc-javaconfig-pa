@@ -113,7 +113,7 @@
                             <div class="control-group info">
                                 <label class="control-label" for="inputInfo">Jenis Kelamin :</label>
                                 <div class="controls">
-                                    <span class="help-inline">${pribadi.jeniskelamin}</span>
+                                    <span class="help-inline">${pribadi.jenisKelamin}</span>
                                 </div>
                             </div>
 
@@ -134,7 +134,7 @@
                             <div class="control-group info">
                                 <label class="control-label" for="inputInfo">Status dalam Keluarga :</label>
                                 <div class="controls">
-                                    <span class="help-inline">${pribadi.statinkeluarga}</span>
+                                    <span class="help-inline">${pribadi.statinKeluarga}</span>
                                 </div>
                             </div>
 
@@ -175,55 +175,10 @@
                                     <span class="help-inline">${pribadi.semester}</span>
                                 </div>
                             </div>
-
                             <div class="control-group info">
-                                <label class="control-label" for="inputInfo">Madrasah/Sekolah asal</label>
-                            </div>
-                            <div class="control-group info">
-                                <label class="control-label" for="inputInfo">Nama Sekolah/Madrasah :</label>
+                                <label class="control-label" for="inputInfo">Nama Sekolah Asal :</label>
                                 <div class="controls">
                                     <span class="help-inline">${pribadi.skol_asal}</span>
-                                </div>
-                            </div>
-
-                            <div class="control-group info">
-                                <label class="control-label" for="inputInfo">Alamat :</label>
-                                <div class="controls">
-                                    <span class="help-inline">${pribadi.almskol_asal}</span>
-                                </div>
-                            </div>
-
-                            <div class="control-group info">
-                                <label class="control-label" for="inputInfo">Surat Tanda Lulus MTs/SMP</label>
-                            </div>
-                            <div class="control-group info">
-                                <label class="control-label" for="inputInfo">Tahun :</label>
-                                <div class="controls">
-                                    <span class="help-inline">${pribadi.ijazahtahun}</span>
-                                </div>
-                            </div>
-
-                            <div class="control-group info">
-                                <label class="control-label" for="inputInfo">Nomor :</label>
-                                <div class="controls">
-                                    <span class="help-inline">${pribadi.ijazahno}</span>
-                                </div>
-                            </div>
-
-                            <div class="control-group info">
-                                <label class="control-label" for="inputInfo">Surat Keterangan Hasil Ujian Nasional(SKHUN) SMP/MTs</label>
-                            </div>
-                            <div class="control-group info">
-                                <label class="control-label" for="inputInfo">Tahun :</label>
-                                <div class="controls">
-                                    <span class="help-inline">${pribadi.skhuntahun}</span>
-                                </div>
-                            </div>
-
-                            <div class="control-group info">
-                                <label class="control-label" for="inputInfo">Nomor :</label>
-                                <div class="controls">
-                                    <span class="help-inline">${pribadi.skhunno}</span>
                                 </div>
                             </div>
 
@@ -298,21 +253,21 @@
                             <div class="control-group info">
                                 <label class="control-label" for="inputInfo">Alamat Wali :</label>
                                 <div class="controls">
-                                    <span class="help-inline">${pribadi.alamatwali}</span>
+                                    <span class="help-inline">${pribadi.alamatWali}</span>
                                 </div>
                             </div>
 
                             <div class="control-group info">
                                 <label class="control-label" for="inputInfo">Telepon Wali :</label>
                                 <div class="controls">
-                                    <span class="help-inline">${pribadi.teleponwali}</span>
+                                    <span class="help-inline">${pribadi.teleponWali}</span>
                                 </div>
                             </div>
 
                             <div class="control-group info">
                                 <label class="control-label" for="inputInfo">Pekerjaan Wali :</label>
                                 <div class="controls">
-                                    <span class="help-inline">${pribadi.kerjawali}</span>
+                                    <span class="help-inline">${pribadi.kerjaWali}</span>
                                 </div>
                             </div>
 
@@ -320,7 +275,7 @@
                                 <label class="control-label" for="inputInfo">Penghasilan Wali :</label>
                                 <div class="controls">
                                     <span class="help-inline">Rp.</span>
-                                    <span class="help-inline">${pribadi.penghasilan_wali}/Bulan</span>
+                                    <span class="help-inline">${pribadi.gajiWali}/Bulan</span>
                                 </div>
                             </div>
                                 

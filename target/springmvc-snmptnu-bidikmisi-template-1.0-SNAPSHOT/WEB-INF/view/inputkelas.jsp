@@ -92,19 +92,13 @@
                         <div class="control-group info">
                             <label class="control-label" for="inputInfo">Kode Kelas :</label>
                             <div class="controls">
-                                <form:input path="kodekelas"/>
+                                <form:input path="kodekKelas"/>
                             </div>
                         </div>
                         <div class="control-group info">
                             <label class="control-label" for="inputInfo">Kelas :</label>
                             <div class="controls">
-                                <form:input path="namakelas"/>
-                            </div>
-                        </div>
-                        <div class="control-group info">
-                            <label class="control-label" for="inputInfo">Tahun Ajaran :</label>
-                            <div class="controls">
-                                <form:input path="tahunajaran" />
+                                <form:input path="namaKelas"/>
                             </div>
                         </div>
 

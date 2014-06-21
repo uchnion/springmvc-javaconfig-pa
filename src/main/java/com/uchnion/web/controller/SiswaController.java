@@ -47,7 +47,7 @@ public class SiswaController {
         return "siswa";
     }
     
-    @RequestMapping(value = "/siswatampil/pribadi/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/siswatampil/pribadi/{siswaId}", method = RequestMethod.GET)
     public String SiswaPribadiPage(Model model) { 
         List <Siswa> siswa = siswaservice.getAllSiswa();
         model.addAttribute("tampilpribadi", siswa);
@@ -55,18 +55,18 @@ public class SiswaController {
         return "siswapribadi";
     }
 
-    @RequestMapping(value = "/siswaedit/{id}", method = RequestMethod.GET)
-    public ModelAndView SiswaEditPage(@PathVariable Integer id) {
+    @RequestMapping(value = "/siswaedit/{siswaId}", method = RequestMethod.GET)
+    public ModelAndView SiswaEditPage(@PathVariable Integer siswaId) {
         ModelAndView mav = new ModelAndView("editsiswa");
 
-        Siswa siswa = siswaservice.getSiswa(id);
+        Siswa siswa = siswaservice.getSiswa(siswaId);
         mav.addObject("ubahsiswa", siswa);
 
         return mav;
     }
 
-    @RequestMapping(value = "/siswaedit/{id}", method = RequestMethod.POST)
-    public ModelAndView SiswaEditingPage(@ModelAttribute Siswa siswa, @PathVariable Integer id) {
+    @RequestMapping(value = "/siswaedit/{siswaId}", method = RequestMethod.POST)
+    public ModelAndView SiswaEditingPage(@ModelAttribute Siswa siswa, @PathVariable Integer siswaId) {
         ModelAndView mav = new ModelAndView("siswa");
         siswaservice.updateSiswa(siswa);
 
@@ -78,9 +78,9 @@ public class SiswaController {
         return mav;
     }
 
-    @RequestMapping(value = "/siswadelete/{id}", method = RequestMethod.GET)
-    public String DeleteSiswaPage(@PathVariable Integer id, Model model) {
-        siswaservice.deleteSiswa(id);
+    @RequestMapping(value = "/siswadelete/{siswaId}", method = RequestMethod.GET)
+    public String DeleteSiswaPage(@PathVariable Integer siswaId, Model model) {
+        siswaservice.deleteSiswa(siswaId);
         List<Siswa> list = siswaservice.getAllSiswa();
         model.addAttribute("BanyakSiswa", list);
         String pesan = "Siswa berhasil di hapus";

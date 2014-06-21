@@ -47,19 +47,19 @@ public class MapelController {
         return "mapel";
     }
 
-    @RequestMapping(value = "/mapeledit/{mapelid}", method = RequestMethod.GET)
-    public ModelAndView MapelEditPage(@PathVariable Integer mapelid) {
+    @RequestMapping(value = "/mapeledit/{mapelId}", method = RequestMethod.GET)
+    public ModelAndView MapelEditPage(@PathVariable Integer mapelId) {
         ModelAndView mav = new ModelAndView("editmapel");
 
-        Mapel mapel = mapelservice.getMapel(mapelid);
+        Mapel mapel = mapelservice.getMapel(mapelId);
         mav.addObject("ubahmapel", mapel);
 
         return mav;
     }
     
 
-    @RequestMapping(value = "/mapeledit/{mapelid}", method = RequestMethod.POST)
-    public ModelAndView MapelEditingPage(@ModelAttribute Mapel mapel, @PathVariable Integer mapelid) {
+    @RequestMapping(value = "/mapeledit/{mapelId}", method = RequestMethod.POST)
+    public ModelAndView MapelEditingPage(@ModelAttribute Mapel mapel, @PathVariable Integer mapelId) {
         ModelAndView mav = new ModelAndView("mapel");
         mapelservice.updateMapel(mapel);
 
@@ -71,9 +71,9 @@ public class MapelController {
         return mav;
     }
 
-    @RequestMapping(value = "/mapeldelete/{mapelid}", method = RequestMethod.GET)
-    public String DeleteMapelPage(@PathVariable Integer mapelid, Model model) {
-        mapelservice.deleteMapel(mapelid);
+    @RequestMapping(value = "/mapeldelete/{mapelId}", method = RequestMethod.GET)
+    public String DeleteMapelPage(@PathVariable Integer mapelId, Model model) {
+        mapelservice.deleteMapel(mapelId);
         List<Mapel> list = mapelservice.getAllMapel();
         model.addAttribute("BanyakMapel", list);
         String pesan = "Mata Pelajaran berhasil di hapus";

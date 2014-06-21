@@ -125,13 +125,13 @@
                             <c:forEach var="siswa" items="${BanyakSiswa}">
                                 <tbody>
                                     <tr>
-                                        <td>${siswa.id}</td>
+                                        <td>${siswa.siswaId}</td>
                                         <td>${siswa.nama}</td>
                                         <td>${siswa.nis}</td>
-                                        <td><a href="${pageContext.request.contextPath}/siswatampil/pribadi/${siswa.id}">Lihat</a></td>
+                                        <td><a href="${pageContext.request.contextPath}/siswatampil/pribadi/${siswa.siswaId}">Lihat</a></td>
                                         <td>
-                                            <a href="${pageContext.request.contextPath}/siswaedit/${siswa.id}" onclick="">Edit</a>&nbsp;&nbsp;|&nbsp;|&nbsp;&nbsp;
-                                            <a href="${pageContext.request.contextPath}/siswadelete/${siswa.id}" onclick="return confirm('Apakah Anda yakin akan menghapus ${siswa.nama} dari daftar siswa SMAN 3 Seluma ? ')">Hapus</a>
+                                            <a href="${pageContext.request.contextPath}/siswaedit/${siswa.siswaId}" onclick="">Edit</a>&nbsp;&nbsp;|&nbsp;|&nbsp;&nbsp;
+                                            <a href="${pageContext.request.contextPath}/siswadelete/${siswa.siswaId}" onclick="return confirm('Apakah Anda yakin akan menghapus ${siswa.nama} dari daftar siswa SMAN 3 Seluma ? ')">Hapus</a>
                                         </td>
                                     </tr>
                                 </tbody>

@@ -91,7 +91,7 @@
                     </div>
 
 
-                    <form:form commandName="ubahmapel" action="${pageContext.request.contextPath}/mapeledit/${ubahmapel.mapelid}"
+                    <form:form commandName="ubahmapel" action="${pageContext.request.contextPath}/mapeledit/${ubahmapel.mapelId}"
                                class="bs-docs-example form-horizontal" method="POST">
 
                         <div class="control-group info">

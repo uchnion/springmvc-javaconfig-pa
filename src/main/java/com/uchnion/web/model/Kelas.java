@@ -1,73 +1,82 @@
 package com.uchnion.web.model;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 
 /**
  *
  * @author Marojahan
  */
 @Entity
-@Table(name = "KELAS")
-public class Kelas implements Serializable {
+@Table(name = "kelas")
+public class Kelas implements Serializable{
+    
+    private Integer kelasId;
+    private String kodekKelas;
+    private String namaKelas;
+    private Set<KelasSiswa> kelasSiswacom = new HashSet<KelasSiswa>(0);
 
-    private static final long serialVersionID = 1L;
+    public Kelas() {
+    }
+
+    public Kelas(String kodekKelas, String namaKelas) {
+        this.kodekKelas = kodekKelas;
+        this.namaKelas = namaKelas;
+    }
+
+    public Kelas(String kodekKelas, String namaKelas, Set <KelasSiswa>kelasSiswacom) {
+        this.kodekKelas = kodekKelas;
+        this.namaKelas = namaKelas;
+        this.kelasSiswacom = kelasSiswacom;
+    }
 
     @Id
-    @NotNull
-    @GeneratedValue
-    @Column(name = "KELASID", nullable = false, length = 20)
-    private Integer kelasid;
-
-    @NotNull
-    @Column(name = "KODEKELAS", nullable = false, length = 20)
-    private String kodekelas;
-
-    @NotNull
-    @Column(name = "NAMAKELAS", nullable = false, length = 20)
-    private String namakelas;
-
-    @NotNull
-    @Column(name = "TAHUNAJAR", nullable = false, length = 10)
-    private String tahunajaran;
-
-//    getter and setter
-    public String getKodekelas() {
-        return kodekelas;
+    @GeneratedValue(strategy = IDENTITY)
+    @Column(name = "KELAS_ID", unique = true, nullable = false)
+    public Integer getKelasId() {
+        return kelasId;
     }
 
-    public void setKodekelas(String kodekelas) {
-        this.kodekelas = kodekelas;
+    public void setKelasId(Integer kelasId) {
+        this.kelasId = kelasId;
     }
 
-    public String getNamakelas() {
-        return namakelas;
+    @Column(name = "KODE_KELAS", nullable = false, length = 20)
+    public String getKodekKelas() {
+        return kodekKelas;
     }
 
-    public void setNamakelas(String namakelas) {
-        this.namakelas = namakelas;
+    public void setKodekKelas(String kodekKelas) {
+        this.kodekKelas = kodekKelas;
     }
 
-    public String getTahunajaran() {
-        return tahunajaran;
+    @Column(name = "NAMA_KELAS", nullable = false, length = 10)
+    public String getNamaKelas() {
+        return namaKelas;
     }
 
-    public void setTahunajaran(String tahunajaran) {
-        this.tahunajaran = tahunajaran;
+    public void setNamaKelas(String namaKelas) {
+        this.namaKelas = namaKelas;
     }
 
-    public Integer getKelasid() {
-        return kelasid;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "pk.kelas", cascade = CascadeType.ALL)
+    public Set<KelasSiswa> getKelasSiswacom() {
+        return kelasSiswacom;
     }
 
-    public void setKelasid(Integer kelasid) {
-        this.kelasid = kelasid;
+    public void setKelasSiswacom(Set<KelasSiswa> kelasSiswacom) {
+        this.kelasSiswacom = kelasSiswacom;
     }
-
-   
+    
+    
 }

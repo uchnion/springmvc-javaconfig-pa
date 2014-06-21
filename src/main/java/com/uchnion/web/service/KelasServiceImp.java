@@ -29,14 +29,14 @@ public class KelasServiceImp implements KelasService{
     }
 
     @Override
-    public void deleteKelas(Integer kelasid) {
-        daokelas.deleteKelas(kelasid);
+    public void deleteKelas(Integer kelasId) {
+        daokelas.deleteKelas(kelasId);
     }
 
     @Override
     @Transactional(readOnly = true)
-    public Kelas getKelas(Integer kelasid) {
-        return daokelas.getKelas(kelasid);
+    public Kelas getKelas(Integer kelasId) {
+        return daokelas.getKelas(kelasId);
     }
 
     @Override

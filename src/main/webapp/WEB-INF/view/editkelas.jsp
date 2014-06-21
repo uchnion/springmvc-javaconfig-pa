@@ -91,26 +91,20 @@
                     </div>
 
 
-                    <form:form commandName="ubahkelas" action="${pageContext.request.contextPath}/kelasedit/${ubahkelas.kelasid}"
+                    <form:form commandName="ubahkelas" action="${pageContext.request.contextPath}/kelasedit/${ubahkelas.kelasId}"
                                class="bs-docs-example form-horizontal" method="POST">
 
                         
                         <div class="control-group info">
                             <label class="control-label" for="inputInfo">Kode Kelas :</label>
                             <div class="controls">
-                                <form:input path="kodekelas" disabled="true"/>
+                                <form:input path="kodekKelas" />
                             </div>
                         </div>
                         <div class="control-group info">
                             <label class="control-label" for="inputInfo">Kelas :</label>
                             <div class="controls">
-                                <form:input path="namakelas"/>
-                            </div>
-                        </div>
-                        <div class="control-group info">
-                            <label class="control-label" for="inputInfo">Tahun Ajaran :</label>
-                            <div class="controls">
-                                <form:input path="tahunajaran" />
+                                <form:input path="namaKelas"/>
                             </div>
                         </div>
 

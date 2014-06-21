@@ -77,34 +77,7 @@
                 <div class="span9">
 
                     <h3 style="text-align:center">MATA PELAJARAN SMAN 3 SELUMA</h3>
-                    <!--
-                    
-          <div class="control-group info">
-          <label class="control-label" for="inputInfo">Tahun Ajaran :</label>
-          <div class="controls">
-            <select class="span3">
-                    <option>2001/2002</option>
-                    <option>2002/2003</option>
-                    <option>2003/2004</option>
-                    <option>2004/2005</option>
-                    <option>2005/2006</option>
-            </select>
-          </div>
-        </div>
-                    
-          <div class="control-group info">
-          <label class="control-label" for="inputInfo">Kelas :</label>
-          <div class="controls">
-            <select class="span3">
-                    <option>X</option>
-                    <option>XI IPA</option>
-                    <option>XI IPS</option>
-                    <option>XII IPA</option>
-                    <option>XII IPS</option>
-          </select>
-          </div>
-        </div> 
-                    -->
+                   
                     <div class="pull-right">
                         <input type="text" class="input-medium search-query">
                         <button type="submit" class="btn">Search</button>
@@ -126,12 +99,12 @@
                             <tbody>
                                 <tr>
 
-                                    <td> ${mapel.mapelid}</td>
+                                    <td> ${mapel.mapelId}</td>
                                     <td> ${mapel.namamapel} </td>
                                     <td> ${mapel.kodemapel} </td>
                                     <td> ${mapel.kkm} </td>
-                                    <td><a href="${pageContext.request.contextPath}/mapeledit/${mapel.mapelid}" onclick="">Edit</a>&nbsp;&nbsp;|&nbsp;|&nbsp;&nbsp;
-                                        <a href="${pageContext.request.contextPath}/mapeldelete/${mapel.mapelid}" onclick="return confirm('Apakah Anda yakin akan menghapus mata pelajaran ${mapel.namamapel} ? ')">Hapus</a></td>
+                                    <td><a href="${pageContext.request.contextPath}/mapeledit/${mapel.mapelId}" onclick="">Edit</a>&nbsp;&nbsp;|&nbsp;|&nbsp;&nbsp;
+                                        <a href="${pageContext.request.contextPath}/mapeldelete/${mapel.mapelId}" onclick="return confirm('Apakah Anda yakin akan menghapus mata pelajaran ${mapel.namamapel} ? ')">Hapus</a></td>
 
                                 </tr>
                             </tbody>

@@ -13,9 +13,9 @@ public interface DaoKelas {
     
     void updateKelas (Kelas kelas);
     
-    void deleteKelas (Integer kelasid);
+    void deleteKelas (Integer kelasId);
     
-    Kelas getKelas (Integer kelasid);
+    Kelas getKelas (Integer kelasId);
     
     void selectKelas (Kelas kelas);
     

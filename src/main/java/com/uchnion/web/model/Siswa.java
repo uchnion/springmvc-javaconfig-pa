@@ -1,150 +1,158 @@
 package com.uchnion.web.model;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
+import javax.persistence.UniqueConstraint;
 
 /**
  *
  * @author Marojahan
  */
 @Entity
-@Table(name = "SISWA")
-public class Siswa implements Serializable {
+@Table(name = "siswa", uniqueConstraints = {@UniqueConstraint(columnNames = "NIS")})
+public class Siswa implements Serializable{
+    
+    private Integer siswaId;
+    private String nis;
+    private String nama;
+    private String tempat_l;
+    private String tanggal_l;
+    private String jenisKelamin;
+    private String agama;
+    private String anak_ke;
+    private String statinKeluarga;
+    private String alamat;
+    private String telepon;
+    private String dikelas;
+    private String padatgl;
+    private String semester;
+    private String skol_asal;
+//    private String almskol_asal;
+//    private String ijazahtahun;
+//    private String ijazahno;
+//    private String skhuntahun;
+//    private String skhunno;
+    private String namaayah;
+    private String namaibu;
+    private String alamatortu;
+    private String telepon_ortu;
+    private String kerjaayah;
+    private String kerjaibu;
+    private Integer gaji_ortu;
+    private String namawali;
+    private String alamatWali;
+    private String teleponWali;
+    private String kerjaWali;
+    private Integer gajiWali;
+    private Set<KelasSiswa> kelasSiswacom= new HashSet<KelasSiswa>(0);
+    private Set<EkskulSiswa> ekskulSiswacom = new HashSet<EkskulSiswa>(0);
+    private Set<MapelSiswa> mapelSiswacom = new HashSet<MapelSiswa>(0);
 
-    public static final long serialVersionID = 1L;
+    public Siswa() {
+    }
+
+    public Siswa(String nis, String nama, String tempat_l, String tanggal_l, String jenisKelamin, 
+            String agama, String anak_ke, String statinKeluarga, String alamat, String telepon, 
+            String dikelas, String padatgl, String semester, String skol_asal, String namaayah, 
+            String namaibu, String alamatortu, String telepon_ortu, String kerjaayah, String kerjaibu, 
+            Integer gaji_ortu, String namawali, String alamatWali, String teleponWali, String kerjaWali, Integer gajiWali) {
+        this.nis = nis;
+        this.nama = nama;
+        this.tempat_l = tempat_l;
+        this.tanggal_l = tanggal_l;
+        this.jenisKelamin = jenisKelamin;
+        this.agama = agama;
+        this.anak_ke = anak_ke;
+        this.statinKeluarga = statinKeluarga;
+        this.alamat = alamat;
+        this.telepon = telepon;
+        this.dikelas = dikelas;
+        this.padatgl = padatgl;
+        this.semester = semester;
+        this.skol_asal = skol_asal;
+//        this.almskol_asal = almskol_asal;
+//        this.ijazahtahun = ijazahtahun;
+//        this.ijazahno = ijazahno;
+//        this.skhuntahun = skhuntahun;
+//        this.skhunno = skhunno;
+        this.namaayah = namaayah;
+        this.namaibu = namaibu;
+        this.alamatortu = alamatortu;
+        this.telepon_ortu = telepon_ortu;
+        this.kerjaayah = kerjaayah;
+        this.kerjaibu = kerjaibu;
+        this.gaji_ortu = gaji_ortu;
+        this.namawali = namawali;
+        this.alamatWali = alamatWali;
+        this.teleponWali = teleponWali;
+        this.kerjaWali = kerjaWali;
+        this.gajiWali = gajiWali;
+    }
+    
+    public Siswa(String nis, String nama, String tempat_l, String tanggal_l, String jenisKelamin, String agama, 
+            String anak_ke, String statinKeluarga, String alamat, String telepon, String dikelas, String padatgl, 
+            String semester, String skol_asal, String namaayah, String namaibu, String alamatortu, 
+            String telepon_ortu, String kerjaayah, String kerjaibu, Integer gaji_ortu, String namawali, 
+            String alamatWali, String teleponWali, String kerjaWali, Integer gajiWali, 
+            Set <KelasSiswa>kelasSiswacom,Set<EkskulSiswa>ekskulSiswacom, Set<MapelSiswa>mapelSiswacom) {
+        this.nis = nis;
+        this.nama = nama;
+        this.tempat_l = tempat_l;
+        this.tanggal_l = tanggal_l;
+        this.jenisKelamin = jenisKelamin;
+        this.agama = agama;
+        this.anak_ke = anak_ke;
+        this.statinKeluarga = statinKeluarga;
+        this.alamat = alamat;
+        this.telepon = telepon;
+        this.dikelas = dikelas;
+        this.padatgl = padatgl;
+        this.semester = semester;
+        this.skol_asal = skol_asal;
+//        this.almskol_asal = almskol_asal;
+//        this.ijazahtahun = ijazahtahun;
+//        this.ijazahno = ijazahno;
+//        this.skhuntahun = skhuntahun;
+//        this.skhunno = skhunno;
+        this.namaayah = namaayah;
+        this.namaibu = namaibu;
+        this.alamatortu = alamatortu;
+        this.telepon_ortu = telepon_ortu;
+        this.kerjaayah = kerjaayah;
+        this.kerjaibu = kerjaibu;
+        this.gaji_ortu = gaji_ortu;
+        this.namawali = namawali;
+        this.alamatWali = alamatWali;
+        this.teleponWali = teleponWali;
+        this.kerjaWali = kerjaWali;
+        this.gajiWali = gajiWali;
+        this.kelasSiswacom = kelasSiswacom;
+        this.ekskulSiswacom = ekskulSiswacom;
+        this.mapelSiswacom = mapelSiswacom;
+    }
 
     @Id
-    @GeneratedValue
-    @Column(name = "SISWAID")
-    private Integer id;
-
-    @NotNull
-    @Column(name = "NIS", nullable = false, length = 20)
-    private String nis;
-
-    @NotNull
-    @Column(name = "NAMA", nullable = false, length = 120)
-    private String nama;
-
-    @NotNull
-    @Column(name = "TEMPAT_LAHIR", nullable = false, length = 50)
-    private String tempat_l;
-
-    @NotNull
-    @Column(name = "TANGGAL_LAHIR", nullable = false, length = 20)
-    private String tanggal_l;
-
-    @NotNull
-    @Column(name = "JENIS_KELAMIN",nullable = false, length = 20)
-    private String jeniskelamin;
-
-    @NotNull
-    @Column(name = "AGAMA",nullable = false, length = 30)
-    private String agama;
-
-    @NotNull
-    @Column(name = "ANAK_KE",nullable = false, length = 20)
-    private String anak_ke;
-
-    @NotNull
-    @Column(name = "STATUS_KELUARGA",nullable = false, length = 30)
-    private String statinkeluarga;
-
-    @NotNull
-    @Column(name ="ALAMAT" ,nullable = false, length = 200)
-    private String alamat;
-
-    @NotNull
-    @Column(name ="TELEPON",nullable = false, length = 20)
-    private String telepon;
-
-    @Column(name = "DIKELAS",nullable = false, length = 10)
-    private String dikelas;
-
-    @Column(name = "PADA_TANGGAL",nullable = false, length = 20)
-    private String padatgl;
-
-    @Column(name = "SEMESTER",nullable = false, length = 20)
-    private String semester;
-
-    @NotNull
-    @Column(name = "SEKOLAH_ASAL",nullable = false, length = 120)
-    private String skol_asal;
-
-    @NotNull
-    @Column(name = "ALMSEKOLAH_ASAL",nullable = false, length = 200)
-    private String almskol_asal;
-
-    @NotNull
-    @Column(name = "IJAZAH_TAHUN",nullable = false, length = 10)
-    private String ijazahtahun;
-
-    @NotNull
-    @Column(name = "IJAZAH_NO",nullable = false, length = 30)
-    private String ijazahno;
-
-    @NotNull
-    @Column(name = "SKHUN_TAHUN",nullable = false, length = 10)
-    private String skhuntahun;
-
-    @NotNull
-    @Column(name = "SKHUN_NOnullable",nullable = false, length = 30)
-    private String skhunno;
-
-    @NotNull
-    @Column(name = "NAMA_AYAH",nullable = false, length = 120)
-    private String namaayah;
-
-    @NotNull
-    @Column(name = "NAMA_IBU",nullable = false, length = 120)
-    private String namaibu;
-
-    @Column(name = "ALAMAT_ORTU",nullable = false, length = 120)
-    private String alamatortu;
-
-    @Column(name = "TELEPON_ORTU",nullable = false, length = 20)
-    private String telepon_ortu;
-
-    @Column(name = "KERJA_AYAH",nullable = false, length = 120)
-    private String kerjaayah;
-
-    @Column(name = "KERJA_IBU",nullable = false, length = 120)
-    private String kerjaibu;
-
-    @NotNull
-    @Column(name = "GAJI_ORTU",nullable = false)
-    private Integer gaji_ortu;
-
-    @Column(name = "NAMA_WALI",nullable = false, length = 100)
-    private String namawali;
-
-    @Column(name = "ALAMAT_WALI",nullable = false, length = 200)
-    private String alamatwali;
-
-    @Column(name = "TELEPON_WALI",nullable = false, length = 20)
-    private String teleponwali;
-
-    @Column(name = "KERJA_WALI",nullable = false, length = 100)
-    private String kerjawali;
-
-    @Column(name = "GAJI_WALI",nullable = false)
-    private Integer penghasilan_wali;
-
-    //Create Getter and Setter
-    //=====================================//
-    public Integer getId() {
-        return id;
+    @GeneratedValue(strategy = IDENTITY)
+    @Column(name = "SISWA_ID", unique = true, nullable = false)
+    public Integer getSiswaId() {
+        return siswaId;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setSiswaId(Integer siswaId) {
+        this.siswaId = siswaId;
     }
 
+    @Column(name = "NIS", unique = true, nullable = false, length = 20)
     public String getNis() {
         return nis;
     }
@@ -153,6 +161,7 @@ public class Siswa implements Serializable {
         this.nis = nis;
     }
 
+    @Column(name = "NAMA", unique = true, nullable = false, length = 100)
     public String getNama() {
         return nama;
     }
@@ -161,6 +170,7 @@ public class Siswa implements Serializable {
         this.nama = nama;
     }
 
+    @Column(name = "TEMPAT_LAHIR", nullable = false, length = 50)
     public String getTempat_l() {
         return tempat_l;
     }
@@ -169,6 +179,7 @@ public class Siswa implements Serializable {
         this.tempat_l = tempat_l;
     }
 
+    @Column(name = "TANGGAL_LAHIR", nullable = false, length = 20)
     public String getTanggal_l() {
         return tanggal_l;
     }
@@ -177,14 +188,17 @@ public class Siswa implements Serializable {
         this.tanggal_l = tanggal_l;
     }
 
-    public String getJeniskelamin() {
-        return jeniskelamin;
+    @Column(name = "JENIS_KELAMIN", nullable = false, length = 20)
+    public String getJenisKelamin() {
+        return jenisKelamin;
     }
 
-    public void setJeniskelamin(String jeniskelamin) {
-        this.jeniskelamin = jeniskelamin;
+    public void setJenisKelamin(String jenisKelamin) {
+        this.jenisKelamin = jenisKelamin;
     }
 
+
+    @Column(name = "AGAMA", nullable = false, length = 20)
     public String getAgama() {
         return agama;
     }
@@ -193,6 +207,7 @@ public class Siswa implements Serializable {
         this.agama = agama;
     }
 
+    @Column(name = "ANAK_KE", nullable = false, length = 20)
     public String getAnak_ke() {
         return anak_ke;
     }
@@ -201,14 +216,16 @@ public class Siswa implements Serializable {
         this.anak_ke = anak_ke;
     }
 
-    public String getStatinkeluarga() {
-        return statinkeluarga;
+    @Column(name = "STATUS_KELUARGA", nullable = false, length = 30)
+    public String getStatinKeluarga() {
+        return statinKeluarga;
     }
 
-    public void setStatinkeluarga(String statinkeluarga) {
-        this.statinkeluarga = statinkeluarga;
+    public void setStatinKeluarga(String statinKeluarga) {
+        this.statinKeluarga = statinKeluarga;
     }
 
+    @Column(name = "ALAMAT", nullable = false, length = 200)
     public String getAlamat() {
         return alamat;
     }
@@ -217,6 +234,7 @@ public class Siswa implements Serializable {
         this.alamat = alamat;
     }
 
+    @Column(name = "TELEPON", nullable = false, length = 20)
     public String getTelepon() {
         return telepon;
     }
@@ -225,6 +243,7 @@ public class Siswa implements Serializable {
         this.telepon = telepon;
     }
 
+    @Column(name = "DIKELAS", nullable = false, length = 10)
     public String getDikelas() {
         return dikelas;
     }
@@ -233,6 +252,7 @@ public class Siswa implements Serializable {
         this.dikelas = dikelas;
     }
 
+    @Column(name = "PADA_TANGGAL", nullable = false, length = 20)
     public String getPadatgl() {
         return padatgl;
     }
@@ -241,6 +261,7 @@ public class Siswa implements Serializable {
         this.padatgl = padatgl;
     }
 
+    @Column(name = "SEMESTER", nullable = false, length = 20)
     public String getSemester() {
         return semester;
     }
@@ -249,6 +270,7 @@ public class Siswa implements Serializable {
         this.semester = semester;
     }
 
+    @Column(name = "SEKOLAH_ASAL", nullable = false, length = 120)
     public String getSkol_asal() {
         return skol_asal;
     }
@@ -257,46 +279,52 @@ public class Siswa implements Serializable {
         this.skol_asal = skol_asal;
     }
 
-    public String getAlmskol_asal() {
-        return almskol_asal;
-    }
+//    @Column(name = "ALMSEKOLAH_ASAL", nullable = false, length = 200)
+//    public String getAlmskol_asal() {
+//        return almskol_asal;
+//    }
+//
+//    public void setAlmskol_asal(String almskol_asal) {
+//        this.almskol_asal = almskol_asal;
+//    }
+//
+//    @Column(name = "IJAZAH_TAHUN", nullable = false, length = 10)
+//    public String getIjazahtahun() {
+//        return ijazahtahun;
+//    }
+//
+//    public void setIjazahtahun(String ijazahtahun) {
+//        this.ijazahtahun = ijazahtahun;
+//    }
+//
+//    @Column(name = "IJAZAH_NO", nullable = false, length = 30)
+//    public String getIjazahno() {
+//        return ijazahno;
+//    }
+//
+//    public void setIjazahno(String ijazahno) {
+//        this.ijazahno = ijazahno;
+//    }
+//
+//    @Column(name = "SKHUN_TAHUN", nullable = false, length = 10)
+//    public String getSkhuntahun() {
+//        return skhuntahun;
+//    }
+//
+//    public void setSkhuntahun(String skhuntahun) {
+//        this.skhuntahun = skhuntahun;
+//    }
+//
+//    @Column(name = "SKHUN_NO", nullable = false, length = 30)
+//    public String getSkhunno() {
+//        return skhunno;
+//    }
+//
+//    public void setSkhunno(String skhunno) {
+//        this.skhunno = skhunno;
+//    }
 
-    public void setAlmskol_asal(String almskol_asal) {
-        this.almskol_asal = almskol_asal;
-    }
-
-    public String getIjazahtahun() {
-        return ijazahtahun;
-    }
-
-    public void setIjazahtahun(String ijazahtahun) {
-        this.ijazahtahun = ijazahtahun;
-    }
-
-    public String getIjazahno() {
-        return ijazahno;
-    }
-
-    public void setIjazahno(String ijazahno) {
-        this.ijazahno = ijazahno;
-    }
-
-    public String getSkhuntahun() {
-        return skhuntahun;
-    }
-
-    public void setSkhuntahun(String skhuntahun) {
-        this.skhuntahun = skhuntahun;
-    }
-
-    public String getSkhunno() {
-        return skhunno;
-    }
-
-    public void setSkhunno(String skhunno) {
-        this.skhunno = skhunno;
-    }
-
+    @Column(name = "NAMA_AYAH", nullable = false, length = 100)
     public String getNamaayah() {
         return namaayah;
     }
@@ -305,6 +333,7 @@ public class Siswa implements Serializable {
         this.namaayah = namaayah;
     }
 
+    @Column(name = "NAMA_IBU", nullable = false, length = 120)
     public String getNamaibu() {
         return namaibu;
     }
@@ -313,6 +342,7 @@ public class Siswa implements Serializable {
         this.namaibu = namaibu;
     }
 
+    @Column(name = "ALAMAT_ORTU", nullable = false, length = 200)
     public String getAlamatortu() {
         return alamatortu;
     }
@@ -321,6 +351,7 @@ public class Siswa implements Serializable {
         this.alamatortu = alamatortu;
     }
 
+    @Column(name = "TELEPON_ORTU", nullable = false, length = 20)
     public String getTelepon_ortu() {
         return telepon_ortu;
     }
@@ -329,6 +360,7 @@ public class Siswa implements Serializable {
         this.telepon_ortu = telepon_ortu;
     }
 
+    @Column(name = "KERJA_AYAH", nullable = false, length = 120)
     public String getKerjaayah() {
         return kerjaayah;
     }
@@ -337,6 +369,7 @@ public class Siswa implements Serializable {
         this.kerjaayah = kerjaayah;
     }
 
+    @Column(name = "KERJA_IBU", nullable = false, length = 120)
     public String getKerjaibu() {
         return kerjaibu;
     }
@@ -345,6 +378,7 @@ public class Siswa implements Serializable {
         this.kerjaibu = kerjaibu;
     }
 
+    @Column(name = "GAJI_ORTU", nullable = false)
     public Integer getGaji_ortu() {
         return gaji_ortu;
     }
@@ -353,6 +387,7 @@ public class Siswa implements Serializable {
         this.gaji_ortu = gaji_ortu;
     }
 
+    @Column(name = "NAMA_WALI", nullable = false, length = 100)
     public String getNamawali() {
         return namawali;
     }
@@ -361,36 +396,71 @@ public class Siswa implements Serializable {
         this.namawali = namawali;
     }
 
-    public String getAlamatwali() {
-        return alamatwali;
+    @Column(name = "ALAMAT_WALI", nullable = false, length = 200)
+    public String getAlamatWali() {
+        return alamatWali;
     }
 
-    public void setAlamatwali(String alamatwali) {
-        this.alamatwali = alamatwali;
+    public void setAlamatWali(String alamatWali) {
+        this.alamatWali = alamatWali;
     }
 
-    public String getTeleponwali() {
-        return teleponwali;
+    @Column(name = "TELEPON_WALI", nullable = false, length = 20)
+    public String getTeleponWali() {
+        return teleponWali;
     }
 
-    public void setTeleponwali(String teleponwali) {
-        this.teleponwali = teleponwali;
+    public void setTeleponWali(String teleponWali) {
+        this.teleponWali = teleponWali;
     }
 
-    public String getKerjawali() {
-        return kerjawali;
+    @Column(name = "KERJA_WALI", nullable = false, length = 100)
+    public String getKerjaWali() {
+        return kerjaWali;
     }
 
-    public void setKerjawali(String kerjawali) {
-        this.kerjawali = kerjawali;
+    public void setKerjaWali(String kerjaWali) {
+        this.kerjaWali = kerjaWali;
     }
 
-    public Integer getPenghasilan_wali() {
-        return penghasilan_wali;
+    @Column(name = "GAJI_WALI", nullable = false)
+    public Integer getGajiWali() {
+        return gajiWali;
     }
 
-    public void setPenghasilan_wali(Integer penghasilan_wali) {
-        this.penghasilan_wali = penghasilan_wali;
+    public void setGajiWali(Integer gajiWali) {
+        this.gajiWali = gajiWali;
+    }
+    
+    
+
+    
+//=============================================================================//
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "pk.siswa", cascade = CascadeType.ALL)
+    public Set<KelasSiswa> getKelasSiswacom() {
+        return kelasSiswacom;
     }
 
+    public void setKelasSiswacom(Set<KelasSiswa> kelasSiswacom) {
+        this.kelasSiswacom = kelasSiswacom;
+    }
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "pk.siswa", cascade = CascadeType.ALL)
+    public Set<EkskulSiswa> getEkskulSiswacom() {
+        return ekskulSiswacom;
+    }
+
+    public void setEkskulSiswacom(Set<EkskulSiswa> ekskulSiswacom) {
+        this.ekskulSiswacom = ekskulSiswacom;
+    }
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "pk.siswa", cascade = CascadeType.ALL)
+    public Set<MapelSiswa> getMapelSiswacom() {
+        return mapelSiswacom;
+    }
+
+    public void setMapelSiswacom(Set<MapelSiswa> mapelSiswacom) {
+        this.mapelSiswacom = mapelSiswacom;
+    }
+    
 }

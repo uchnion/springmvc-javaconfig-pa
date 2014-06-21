@@ -13,9 +13,9 @@ public interface SiswaService {
     
     void updateSiswa (Siswa siswa);
     
-    void deleteSiswa (Integer id);
+    void deleteSiswa (Integer siswaId);
     
-    Siswa getSiswa (Integer id);
+    Siswa getSiswa (Integer siswaId);
     
     void selectSiswa (Siswa siswa);
     

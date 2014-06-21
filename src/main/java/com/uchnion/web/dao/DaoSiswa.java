@@ -10,15 +10,10 @@ import java.util.List;
 public interface DaoSiswa {
 
     void insertSiswa(Siswa siswa);
-
     void updateSiswa(Siswa siswa);
-
-    void deleteSiswa(Integer id);
-
-    Siswa getSiswa(Integer id);
-
+    void deleteSiswa(Integer siswaId);
+    Siswa getSiswa(Integer siswaId);
     void selectSiswa(Siswa siswa);
-
     List<Siswa> getAllSiswa();
 
 }
