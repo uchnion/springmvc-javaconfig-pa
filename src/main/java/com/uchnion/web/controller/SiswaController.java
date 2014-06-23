@@ -47,11 +47,17 @@ public class SiswaController {
         return "siswa";
     }
     
+//    @RequestMapping(value = "/siswatampil/pribadi/{siswaId}", method = RequestMethod.GET)
+//    public String SiswaPribadiPage(Model model) { 
+//        List <Siswa> siswa = siswaservice.getAllSiswa();
+//        model.addAttribute("TampilPribadi", siswa);
+//        return "siswapribadi";
+//    }
+    
     @RequestMapping(value = "/siswatampil/pribadi/{siswaId}", method = RequestMethod.GET)
     public String SiswaPribadiPage(Model model) { 
         List <Siswa> siswa = siswaservice.getAllSiswa();
-        model.addAttribute("tampilpribadi", siswa);
-        
+        model.addAttribute("TampilPribadi", siswa);
         return "siswapribadi";
     }
 

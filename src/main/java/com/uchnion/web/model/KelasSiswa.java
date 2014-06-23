@@ -25,7 +25,6 @@ public class KelasSiswa implements Serializable{
     
     private KelasSiswaId pk = new KelasSiswaId();
     private String tahunAjar;
-    private String semester;
 
     public KelasSiswa() {
     }
@@ -64,15 +63,6 @@ public class KelasSiswa implements Serializable{
 
     public void setTahunAjar(String tahunAjar) {
         this.tahunAjar = tahunAjar;
-    }
-
-    @Column(name = "SEMESTER", nullable = false, length = 10)
-    public String getSemester() {
-        return semester;
-    }
-
-    public void setSemester(String semester) {
-        this.semester = semester;
     }
     
     public boolean equals(Object o) {

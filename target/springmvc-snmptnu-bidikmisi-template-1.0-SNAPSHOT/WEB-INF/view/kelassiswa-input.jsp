@@ -1,19 +1,21 @@
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jstl/core" prefix="c"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
-        <title>Home Aplikasi Pengolahan Nilai untuk pengajuan SNMPTN UNDANGAN dan Bidikmisi</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Input Nilai Siswa</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <!-- Le styles -->
+        <!-- styles -->
+
         <link href="${pageContext.servletContext.contextPath}/assets/css/bootstrap.css" rel="stylesheet">
         <link href="${pageContext.servletContext.contextPath}/assets/css/bootstrap-responsive.css" rel="stylesheet">
         <link href="${pageContext.servletContext.contextPath}/assets/css/docs.css" rel="stylesheet">
         <link href="${pageContext.servletContext.contextPath}/assets/css/prettify.css" rel="stylesheet">
+
     </head>
     <body>
         <!-- Navbar
@@ -34,15 +36,19 @@
                 </div>
             </div>
         </div>
+
         <!-- Subhead
         ================================================== -->
+
         <div class="container">
             <div class="page-header">
+
             </div>
 
+            <!-- Docs nav kiri
+            ================================================== -->
             <!-- Docs nav
             ================================================== -->
-
             <div class="row">
                 <div class="span3 bs-docs-sidebar">
                     <ul class="nav nav-list bs-docs-sidenav">
@@ -81,48 +87,62 @@
                         <li><a href="${pageContext.request.contextPath}/akuntampil"><i class="dropdown-submenu"></i>  Akun</a></li>
                     </ul>
                 </div>
+                <!-- Docs nav Kanan
+                ================================================== -->
 
                 <div class="span9">
+                    <h3 style="text-align:center">SISWA SMAN 3 SELUMA</h3>
+                    <form:form commandName="addklssis" class="bs-docs-example form-horizontal" 
+                               action="${pageContext.request.contextPath}/klssis/input" method="POST">
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Tahun Ajaran :</label>
+                            <div class="controls">
+                                <select class="span3">
+                                    <option>2001/2002</option>
+                                    <option>2002/2003</option>
+                                    <option>2003/2004</option>
+                                    <option>2004/2005</option>
+                                    <option>2005/2006</option>
+                                </select>
+                            </div>
+                        </div>
 
-                    <h3 style="text-align:center">MATA PELAJARAN SMAN 3 SELUMA</h3>
-                   
-                    <div class="pull-right">
-                        <input type="text" class="input-medium search-query">
-                        <button type="submit" class="btn">Search</button>
-                    </div>
-                    <table class="table table-striped">
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Kelas :</label>
+                            <div class="controls">
+                                <select class="span3">
+                                    <option>XA</option>
+                                    <option>XI IPA1</option>
+                                    <option>XI IPS1</option>
+                                    <option>XII IPA1</option>
+                                    <option>XII IPS1</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Kelas :</label>
+                            <div class="controls">
+                                <form:select class="span2" path="kelas.kelasId" items="${listkelas}"/>
+                            </div>
+                        </div>
 
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Nama Mata Pelajaran</th>
-                                <th>Kede Mata Pelajaran</th>
-                                <th>KKM</th>
-                                <th>Keterangan</th>
-                            </tr>
-                        </thead>
-
-                        <c:forEach var="mapel" items="${BanyakMapel}">
-
-                            <tbody>
+                        <table class="table table-striped">
+                            <thead>
                                 <tr>
-
-                                    <td> ${mapel.mapelId}</td>
-                                    <td> ${mapel.namamapel} </td>
-                                    <td> ${mapel.kodemapel} </td>
-                                    <td> ${mapel.kkm} </td>
-                                    <td><a href="${pageContext.request.contextPath}/mapeledit/${mapel.mapelId}" onclick="">Edit</a>&nbsp;&nbsp;|&nbsp;|&nbsp;&nbsp;
-                                        <a href="${pageContext.request.contextPath}/mapeldelete/${mapel.mapelId}" onclick="return confirm('Apakah Anda yakin akan menghapus mata pelajaran ${mapel.namamapel} ? ')">Hapus</a></td>
-
+                                    <th>No</th>
+                                    <th>Nama Peserta Didik</th>
+                                    <th>NIS</th>
+                                    <th>Kelas</th>
+                                    <th>Tahun Ajaran</th>
                                 </tr>
-                            </tbody>
+                            </thead>
 
-                        </c:forEach>
-                    </table>
-                    <div class="pull-right">
-                        <p><a href="${pageContext.request.contextPath}/mapelinput" class="btn btn-primary">+ Mata Pelajaran</a></p>
-                    </div>
+                            
+
+                        </table>
+                    </form:form>
                 </div>
+
             </div>
 
         </div>
@@ -138,10 +158,6 @@
                 <p>All rights reserved.</p>
             </div>
         </footer>
-
-        <!-- javascript
-        ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
 
 
     </body>
