@@ -1,4 +1,5 @@
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib uri="http://java.sun.com/jstl/core" prefix="c"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -91,10 +92,46 @@
                 <div class="span9">
                     <div class="page-header">
                     </div>
-                    <div class="hero-unit">
-                        <h1>Selamat Datang,</h1>
-                        <p>Di Apliasi Pengolahan Nilai Raport untuk Pengajuan SNMPTN Undangan dan Bidikmisi</p>
-                    </div>
+                    <form:form commandName="addekssis" class="bs-docs-example form-horizontal" 
+                               action="${pageContext.request.contextPath}/ekssis/input" method="POST">
+
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Siswa :</label>
+                            <div class="controls">
+                                <form:select class="span2" path="siswa.siswaId" items="${listsiswa}"/>
+                            </div>
+                        </div>
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Ekstra Kulikuler :</label>
+                            <div class="controls">
+                                <form:select class="span2" path="ekskul.ekskulId" items="${listekskul}"/>
+                            </div>
+                        </div>
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Tahun Ajaran :</label>
+                            <div class="controls">
+                                <form:input path="tahunAjar" placeholder="2001/2002"/>
+                            </div>
+                        </div>
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Semester :</label>
+                            <div class="controls">
+                                <form:input path="semester" placeholder="1"/>
+                            </div>
+                        </div>
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Nilai Ekskul :</label>
+                            <div class="controls">
+                                <form:input path="nilaiEkskul" placeholder=""/>
+                            </div>
+                        </div>
+                        <div class="control-group info">
+                            <tr>
+                                <td colspan="2"><input type="submit" value="Simpan"/></td>
+                            </tr>
+                        </div>
+
+                    </form:form>
                     <div class="page-header">
                     </div>
                 </div>

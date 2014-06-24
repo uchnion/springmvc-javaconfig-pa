@@ -29,17 +29,17 @@ public class KelasSiswaController {
         model.addAttribute("addklssis", new KelasSiswa());
         List<Siswa> listsiswa = ksservices.getAllSiswa();
         
-//        Map<Integer, String> pilihan = new HashMap<>();
-//        for (Siswa siswa : ksservices.getAllSiswa()) {
-//            pilihan.put(siswa.getSiswaId(), siswa.getNis());
-//        }
+        Map<Integer, String> pilihan = new HashMap<>();
+        for (Siswa siswa : ksservices.getAllSiswa()) {
+            pilihan.put(siswa.getSiswaId(), siswa.getNis());
+        }
         
         Map<Integer, String> pilihan2 = new HashMap<>();
         for (Kelas kelas : ksservices.getAllKelas()) {
             pilihan2.put(kelas.getKelasId(), kelas.getNamaKelas());
         }
         
-//        model.addAttribute("listsiswa", pilihan);
+        model.addAttribute("listsiswa", pilihan);
         model.addAttribute("listkelas", pilihan2);
         model.addAttribute("BanyakSiswa", listsiswa);
         

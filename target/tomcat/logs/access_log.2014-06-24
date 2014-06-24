@@ -1,0 +1,8 @@
+0:0:0:0:0:0:0:1 - - [24/Jun/2014:19:55:05 +0700] "GET /sman3seluma//ekssis/input HTTP/1.1" 200 7732 http-bio-8080-exec-1 2845
+0:0:0:0:0:0:0:1 - - [24/Jun/2014:19:55:05 +0700] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8080-exec-4 0
+0:0:0:0:0:0:0:1 - - [24/Jun/2014:19:55:27 +0700] "GET /sman3seluma//ekssis/input HTTP/1.1" 200 7904 http-bio-8080-exec-5 625
+0:0:0:0:0:0:0:1 - - [24/Jun/2014:19:55:27 +0700] "GET /sman3seluma/assets/css/bootstrap-responsive.css HTTP/1.1" 304 - http-bio-8080-exec-6 19
+0:0:0:0:0:0:0:1 - - [24/Jun/2014:19:55:27 +0700] "GET /sman3seluma/assets/css/bootstrap.css HTTP/1.1" 304 - http-bio-8080-exec-9 25
+0:0:0:0:0:0:0:1 - - [24/Jun/2014:19:55:27 +0700] "GET /sman3seluma/assets/css/docs.css HTTP/1.1" 304 - http-bio-8080-exec-7 16
+0:0:0:0:0:0:0:1 - - [24/Jun/2014:19:55:27 +0700] "GET /sman3seluma/assets/css/prettify.css HTTP/1.1" 304 - http-bio-8080-exec-8 25
+0:0:0:0:0:0:0:1 - - [24/Jun/2014:19:55:44 +0700] "POST /sman3seluma/ekssis/input HTTP/1.1" 200 5786 http-bio-8080-exec-8 487

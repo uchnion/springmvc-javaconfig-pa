@@ -1,4 +1,5 @@
 <%@taglib uri="http://java.sun.com/jstl/core" prefix="c"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -91,32 +92,26 @@
                 ================================================== -->
 
                 <div class="span9">
-                    <h3 style="text-align:center">SISWA SMAN 3 SELUMA</h3>
+                    <h3 style="text-align:center">KELAS SISWA SMAN 3 SELUMA</h3>
                     <form:form commandName="addklssis" class="bs-docs-example form-horizontal" 
                                action="${pageContext.request.contextPath}/klssis/input" method="POST">
-                        <div class="control-group info">
-                            <label class="control-label" for="inputInfo">Tahun Ajaran :</label>
-                            <div class="controls">
-                                <select class="span3">
-                                    <option>2001/2002</option>
-                                    <option>2002/2003</option>
-                                    <option>2003/2004</option>
-                                    <option>2004/2005</option>
-                                    <option>2005/2006</option>
-                                </select>
-                            </div>
-                        </div>
+                        <!--                        <div class="control-group info">
+                                                    <label class="control-label" for="inputInfo">Tahun Ajaran :</label>
+                                                    <div class="controls">
+                                                        <select class="span3">
+                                                            <option>2001/2002</option>
+                                                            <option>2002/2003</option>
+                                                            <option>2003/2004</option>
+                                                            <option>2004/2005</option>
+                                                            <option>2005/2006</option>
+                                                        </select>
+                                                    </div>
+                                                </div>-->
 
                         <div class="control-group info">
-                            <label class="control-label" for="inputInfo">Kelas :</label>
+                            <label class="control-label" for="inputInfo">Siswa :</label>
                             <div class="controls">
-                                <select class="span3">
-                                    <option>XA</option>
-                                    <option>XI IPA1</option>
-                                    <option>XI IPS1</option>
-                                    <option>XII IPA1</option>
-                                    <option>XII IPS1</option>
-                                </select>
+                                <form:select class="span2" path="siswa.siswaId" items="${listsiswa}"/>
                             </div>
                         </div>
                         <div class="control-group info">
@@ -125,21 +120,35 @@
                                 <form:select class="span2" path="kelas.kelasId" items="${listkelas}"/>
                             </div>
                         </div>
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Tahun Ajaran :</label>
+                            <div class="controls">
+                                <form:input path="tahunAjar" placeholder="2001/2002"/>
+                            </div>
+                        </div>
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Kelas :</label>
 
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Nama Peserta Didik</th>
-                                    <th>NIS</th>
-                                    <th>Kelas</th>
-                                    <th>Tahun Ajaran</th>
-                                </tr>
-                            </thead>
+                            <tr>
+                                <td colspan="2"><input type="submit" value="Simpan"/></td>
+                            </tr>
 
-                            
+                        </div>
 
-                        </table>
+                        <!--                        <table class="table table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>No</th>
+                                                            <th>Nama Peserta Didik</th>
+                                                            <th>NIS</th>
+                                                            <th>Kelas</th>
+                                                            <th>Tahun Ajaran</th>
+                                                        </tr>
+                                                    </thead>
+                        
+                                                    
+                        
+                                                </table>-->
                     </form:form>
                 </div>
 
