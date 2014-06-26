@@ -27,11 +27,14 @@ public class KelasSiswaController {
     @RequestMapping(value = "/klssis/input", method = RequestMethod.GET)
     public String KelasSiswaTambahPage(Model model) {
         model.addAttribute("addklssis", new KelasSiswa());
+        List<KelasSiswa>listklsis= ksservices.getAllKelasSiswa();
         List<Siswa> listsiswa = ksservices.getAllSiswa();
+        List<Kelas> listkelas = ksservices.getAllKelas();
         
         Map<Integer, String> pilihan = new HashMap<>();
         for (Siswa siswa : ksservices.getAllSiswa()) {
             pilihan.put(siswa.getSiswaId(), siswa.getNis());
+            pilihan.put(siswa.getSiswaId(), siswa.getNama());
         }
         
         Map<Integer, String> pilihan2 = new HashMap<>();
@@ -39,9 +42,12 @@ public class KelasSiswaController {
             pilihan2.put(kelas.getKelasId(), kelas.getNamaKelas());
         }
         
-        model.addAttribute("listsiswa", pilihan);
+        model.addAttribute("listsis", pilihan);
         model.addAttribute("listkelas", pilihan2);
-        model.addAttribute("BanyakSiswa", listsiswa);
+        model.addAttribute("listsiswa", listsiswa);
+        model.addAttribute("ListKlsSiswa", listklsis);
+//        model.addAttribute("listsiswa", listsiswa);
+//        model.addAttribute("listkelas", listkelas);
         
         return "kelassiswa-input";
     }
@@ -50,7 +56,7 @@ public class KelasSiswaController {
     public String KelasSiswaTambahinPage(Model model, @ModelAttribute KelasSiswa tambahks) {
         ksservices.insertKelasSiswa(tambahks);
         List<KelasSiswa> list = ksservices.getAllKelasSiswa();
-        model.addAttribute("BanyakKelasSiswa", list);
+        model.addAttribute("ListKlsSiswa", list);
         String pesan = "Kelas Siswa berhasil disimpan";
         return "home";
     }

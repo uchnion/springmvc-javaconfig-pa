@@ -24,6 +24,7 @@ public class Kelas implements Serializable{
     private Integer kelasId;
     private String kodekKelas;
     private String namaKelas;
+    private String jurusan;
     private Set<KelasSiswa> kelasSiswacom = new HashSet<KelasSiswa>(0);
 
     public Kelas() {
@@ -68,6 +69,16 @@ public class Kelas implements Serializable{
     public void setNamaKelas(String namaKelas) {
         this.namaKelas = namaKelas;
     }
+
+    @Column(name = "JURUSAN", nullable = false, length = 10)
+    public String getJurusan() {
+        return jurusan;
+    }
+
+    public void setJurusan(String jurusan) {
+        this.jurusan = jurusan;
+    }
+    
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "pk.kelas", cascade = CascadeType.ALL)
     public Set<KelasSiswa> getKelasSiswacom() {

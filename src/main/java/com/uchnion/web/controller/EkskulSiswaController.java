@@ -42,6 +42,7 @@ public class EkskulSiswaController {
         
         model.addAttribute("listsiswa", pilihan);
         model.addAttribute("listekskul", pilihan2);
+        model.addAttribute("lisSiswaTampil", listsiswa);
 
         return "ekskulsiswa-input";
     }

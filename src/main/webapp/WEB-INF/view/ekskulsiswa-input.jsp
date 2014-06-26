@@ -1,4 +1,4 @@
-<%@taglib uri="http://java.sun.com/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -48,6 +48,7 @@
             <!-- Docs nav
             ================================================== -->
             <div class="row">
+                
                 <div class="span3 bs-docs-sidebar">
                     <ul class="nav nav-list bs-docs-sidenav">
                         <li><a href="${pageContext.request.contextPath}/home"><i class="dropdown-submenu"></i> Beranda </a></li>
@@ -61,7 +62,7 @@
                         <li class="dropdown-submenu">
                             <a href="#">Nilai</a>
                             <ul class="dropdown-menu">
-                                <li><i class="dropdown-submenu"></i><a href="#">Input Nilai</a></li>
+                                <li><i class="dropdown-submenu"></i><a href="${pageContext.request.contextPath}/mplsis/input">Input Nilai</a></li>
                                 <li><i class="dropdown-submenu"></i><a href="#">Lihat Nilai</a></li>
                             </ul>
                         </li>
@@ -70,18 +71,18 @@
                             <a href="#">Kelas</a>
                             <ul class="dropdown-menu">
                                 <li><i class="dropdown-submenu"></i><a href="${pageContext.request.contextPath}/kelastampil">Lihat Kelas</a></li>
-                                <li><i class="dropdown-submenu"></i><a href="#">Perubahan Kelas Siswa</a></li>
+                                <li><i class="dropdown-submenu"></i><a href="${pageContext.request.contextPath}/klssis/input">Perubahan Kelas Siswa</a></li>
                             </ul>
                         </li>
                         <li class="dropdown-submenu">
                             <a href="#">Ekskul</a>
                             <ul class="dropdown-menu">
                                 <li><i class="dropdown-submenu"></i><a href="${pageContext.request.contextPath}/ekskultampil">Lihat Ekskul</a></li>
-                                <li><i class="dropdown-submenu"></i><a href="#">Ekskul Siswa</a></li>
+                                <li><i class="dropdown-submenu"></i><a href="${pageContext.request.contextPath}/ekssis/input">Ekskul Siswa</a></li>
                             </ul>
                         </li>
-                        <li><a href="#"><i class="dropdown-submenu"></i> SNMPTN Undangan </a></li>
-                        <li><a href="#"><i class="dropdown-submenu"></i>  Bidikmisi</a></li>
+                        <li><a href="${pageContext.request.contextPath}/snmptnu"><i class="dropdown-submenu"></i> SNMPTN Undangan </a></li>
+                        <li><a href="${pageContext.request.contextPath}/bidikmisi"><i class="dropdown-submenu"></i>  Bidikmisi</a></li>
                         <li><a href="${pageContext.request.contextPath}/akuntampil"><i class="dropdown-submenu"></i>  Akun</a></li>
                     </ul>
                 </div>
@@ -131,6 +132,40 @@
                             </tr>
                         </div>
 
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Nama Peserta Didik</th>
+                                    <th>NIS</th>
+                                    <th>Ekskul</th>
+                                    <th>Tahun Ajaran</th>
+                                    <th>Semester</th>
+                                    <th>Nilai</th>
+                                </tr>
+                            </thead>
+                            <c:forEach var="item" items="${lisSiswaTampil}">
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td>${item.nama}</td>
+                                        <td>${item.nis}</td>
+                                        <td><form:select class="span2" path="ekskul.ekskulId" items="${listekskul}"/></td>
+                                        <td><form:input path="tahunAjar" placeholder="2001/2002" class="span2"/></td>
+                                        <td><form:input path="semester" placeholder="1" class="span1"/></td>
+                                        <td><form:input path="nilaiEkskul" placeholder="E" class="span1"/></td>
+                                    </tr>
+                                </tbody>
+                            </c:forEach>
+
+                        </table>
+                        <div class="page-header">
+                        </div>
+                        <div class="controls">
+                            <p><input type="submit" class="btn btn-primary" value="Simpan"/>
+                                <a href="" class="btn">Batal</a></p>
+                        </div>
+                            
                     </form:form>
                     <div class="page-header">
                     </div>

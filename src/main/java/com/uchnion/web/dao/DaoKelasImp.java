@@ -34,6 +34,7 @@ public class DaoKelasImp implements DaoKelas{
        if(KelasUp != null){
            KelasUp.setKodekKelas(kelas.getKodekKelas());
            KelasUp.setNamaKelas(kelas.getNamaKelas());
+           KelasUp.setJurusan(kelas.getJurusan());
            
            getSessionFactory().update(KelasUp);
        }
@@ -58,6 +59,7 @@ public class DaoKelasImp implements DaoKelas{
         if (KelasSel != null){
             KelasSel.setKodekKelas(kelas.getKodekKelas());
             KelasSel.setNamaKelas(kelas.getNamaKelas());
+            KelasSel.setJurusan(kelas.getJurusan());
             
             getSessionFactory().update(KelasSel);
         }

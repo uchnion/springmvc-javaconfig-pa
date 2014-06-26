@@ -51,6 +51,7 @@
             <!-- Docs nav
             ================================================== -->
             <div class="row">
+                
                 <div class="span3 bs-docs-sidebar">
                     <ul class="nav nav-list bs-docs-sidenav">
                         <li><a href="${pageContext.request.contextPath}/home"><i class="dropdown-submenu"></i> Beranda </a></li>
@@ -64,7 +65,7 @@
                         <li class="dropdown-submenu">
                             <a href="#">Nilai</a>
                             <ul class="dropdown-menu">
-                                <li><i class="dropdown-submenu"></i><a href="#">Input Nilai</a></li>
+                                <li><i class="dropdown-submenu"></i><a href="${pageContext.request.contextPath}/mplsis/input">Input Nilai</a></li>
                                 <li><i class="dropdown-submenu"></i><a href="#">Lihat Nilai</a></li>
                             </ul>
                         </li>
@@ -73,18 +74,18 @@
                             <a href="#">Kelas</a>
                             <ul class="dropdown-menu">
                                 <li><i class="dropdown-submenu"></i><a href="${pageContext.request.contextPath}/kelastampil">Lihat Kelas</a></li>
-                                <li><i class="dropdown-submenu"></i><a href="#">Perubahan Kelas Siswa</a></li>
+                                <li><i class="dropdown-submenu"></i><a href="${pageContext.request.contextPath}/klssis/input">Perubahan Kelas Siswa</a></li>
                             </ul>
                         </li>
                         <li class="dropdown-submenu">
                             <a href="#">Ekskul</a>
                             <ul class="dropdown-menu">
                                 <li><i class="dropdown-submenu"></i><a href="${pageContext.request.contextPath}/ekskultampil">Lihat Ekskul</a></li>
-                                <li><i class="dropdown-submenu"></i><a href="#">Ekskul Siswa</a></li>
+                                <li><i class="dropdown-submenu"></i><a href="${pageContext.request.contextPath}/ekssis/input">Ekskul Siswa</a></li>
                             </ul>
                         </li>
-                        <li><a href="#"><i class="dropdown-submenu"></i> SNMPTN Undangan </a></li>
-                        <li><a href="#"><i class="dropdown-submenu"></i>  Bidikmisi</a></li>
+                        <li><a href="${pageContext.request.contextPath}/snmptnu"><i class="dropdown-submenu"></i> SNMPTN Undangan </a></li>
+                        <li><a href="${pageContext.request.contextPath}/bidikmisi"><i class="dropdown-submenu"></i>  Bidikmisi</a></li>
                         <li><a href="${pageContext.request.contextPath}/akuntampil"><i class="dropdown-submenu"></i>  Akun</a></li>
                     </ul>
                 </div>
