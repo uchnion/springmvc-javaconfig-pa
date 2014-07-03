@@ -50,7 +50,7 @@
             <!-- Docs nav
             ================================================== -->
             <div class="row">
-                
+
                 <div class="span3 bs-docs-sidebar">
                     <ul class="nav nav-list bs-docs-sidenav">
                         <li><a href="${pageContext.request.contextPath}/home"><i class="dropdown-submenu"></i> Beranda </a></li>
@@ -65,7 +65,7 @@
                             <a href="#">Nilai</a>
                             <ul class="dropdown-menu">
                                 <li><i class="dropdown-submenu"></i><a href="${pageContext.request.contextPath}/mplsis/input">Input Nilai</a></li>
-                                <li><i class="dropdown-submenu"></i><a href="#">Lihat Nilai</a></li>
+                                <li><i class="dropdown-submenu"></i><a href="${pageContext.request.contextPath}/mapelsiswa">Lihat Nilai</a></li>
                             </ul>
                         </li>
                         <li><a href="${pageContext.request.contextPath}/mapeltampil"><i class="dropdown-submenu"></i> Mata Pelajaran </a></li>
@@ -114,6 +114,13 @@
                             <label class="control-label" for="inputInfo">Kode Mata Pelajaran :</label>
                             <div class="controls">
                                 <form:input path="namamapel"/>
+                            </div>
+                        </div>
+
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Semester :</label>
+                            <div class="controls">
+                                <form:input path="semester" required="true"/>
                             </div>
                         </div>
                         <div class="control-group info">

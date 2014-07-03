@@ -11,6 +11,7 @@
         <meta name="author" content="">
 
         <!-- styles -->
+        <script type="text/javascript" src="jquery-min.js"></script>
 
         <link href="${pageContext.servletContext.contextPath}/assets/css/bootstrap.css" rel="stylesheet">
         <link href="${pageContext.servletContext.contextPath}/assets/css/bootstrap-responsive.css" rel="stylesheet">
@@ -51,7 +52,7 @@
             <!-- Docs nav
             ================================================== -->
             <div class="row">
-                
+
                 <div class="span3 bs-docs-sidebar">
                     <ul class="nav nav-list bs-docs-sidenav">
                         <li><a href="${pageContext.request.contextPath}/home"><i class="dropdown-submenu"></i> Beranda </a></li>
@@ -66,7 +67,7 @@
                             <a href="#">Nilai</a>
                             <ul class="dropdown-menu">
                                 <li><i class="dropdown-submenu"></i><a href="${pageContext.request.contextPath}/mplsis/input">Input Nilai</a></li>
-                                <li><i class="dropdown-submenu"></i><a href="#">Lihat Nilai</a></li>
+                                <li><i class="dropdown-submenu"></i><a href="${pageContext.request.contextPath}/mapelsiswa">Lihat Nilai</a></li>
                             </ul>
                         </li>
                         <li><a href="${pageContext.request.contextPath}/mapeltampil"><i class="dropdown-submenu"></i> Mata Pelajaran </a></li>
@@ -96,19 +97,7 @@
                     <h3 style="text-align:center">KELAS SISWA SMAN 3 SELUMA</h3>
                     <form:form commandName="addklssis" class="bs-docs-example form-horizontal" 
                                action="${pageContext.request.contextPath}/klssis/input" method="POST">
-                        <!--                        <div class="control-group info">
-                                                    <label class="control-label" for="inputInfo">Tahun Ajaran :</label>
-                                                    <div class="controls">
-                                                        <select class="span3">
-                                                            <option>2001/2002</option>
-                                                            <option>2002/2003</option>
-                                                            <option>2003/2004</option>
-                                                            <option>2004/2005</option>
-                                                            <option>2005/2006</option>
-                                                        </select>
-                                                    </div>
-                                                </div>-->
-
+                        
                         <div class="control-group info">
                             <label class="control-label" for="inputInfo">Siswa :</label>
                             <div class="controls">
@@ -124,7 +113,7 @@
                         <div class="control-group info">
                             <label class="control-label" for="inputInfo">Tahun Ajaran :</label>
                             <div class="controls">
-                                <form:input path="tahunAjar" placeholder="2001/2002"/>
+                                <form:input path="tahunAjar" placeholder="2001/2002" required="true"/>
                             </div>
                         </div>
                         <div class="controls">
@@ -141,25 +130,21 @@
                                     <th>Tahun Ajaran</th>
                                 </tr>
                             </thead>
-                            <c:forEach var="item" items="${listsiswa}">
+                            <c:forEach var="item" items="${ListKlsSiswa}">
                                 <tbody>
                                     <tr>
                                         <td></td>
-                                        <td>${item.nama}</td>
-                                        <td>${item.nis}</td>
-                                        <td><form:select class="span2" path="kelas.kelasId" items="${listkelas}"/></td>
-                                        <td><form:input path="tahunAjar" placeholder="2001/2002"/></td>
+                                        <td>${item.siswa.nama}</td>
+                                        <td>${item.siswa.nis}</td>
+                                        <td>${item.kelas.namaKelas}</td>
+                                        <td>${item.tahunAjar}</td>
                                     </tr>
                                 </tbody>
                             </c:forEach>
 
                         </table>
-                        <div class="page-header">
-                        </div>
-                        <div class="controls">
-                            <p><input type="submit" class="btn btn-primary" value="Simpan"/>
-                                <a href="" class="btn">Batal</a></p>
-                        </div>
+
+
                     </form:form>
                 </div>
 

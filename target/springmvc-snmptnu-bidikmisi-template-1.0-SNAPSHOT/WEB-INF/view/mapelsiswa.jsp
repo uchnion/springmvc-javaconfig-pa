@@ -1,4 +1,4 @@
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+        <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -54,15 +54,15 @@
                         <li class="dropdown-submenu">
                             <a href="#">Data Siswa</a>
                             <ul class="dropdown-menu">
-                                <li><i class="dropdown-submenu"></i><a href="${pageContext.request.contextPath}/siswainput">Input Data Siswa</a></li>
-                                <li><i class="dropdown-submenu"></i><a href="${pageContext.request.contextPath}/siswatampil">Lihat Data Siswa</a></li>
+                                <li><i class="dropdown-submenu"></i><a href="${pageContext.request.contextPath}/msinput">Input Data Siswa</a></li>
+                                <li><i class="dropdown-submenu"></i><a href="${pageContext.request.contextPath}/mstampil">Lihat Data Siswa</a></li>
                             </ul>
                         </li>
                         <li class="dropdown-submenu">
                             <a href="#">Nilai</a>
                             <ul class="dropdown-menu">
                                 <li><i class="dropdown-submenu"></i><a href="${pageContext.request.contextPath}/mplsis/input">Input Nilai</a></li>
-                                <li><i class="dropdown-submenu"></i><a href="#">Lihat Nilai</a></li>
+                                <li><i class="dropdown-submenu"></i><a href="${pageContext.request.contextPath}/mapelsiswa">Lihat Nilai</a></li>
                             </ul>
                         </li>
                         <li><a href="${pageContext.request.contextPath}/mapeltampil"><i class="dropdown-submenu"></i> Mata Pelajaran </a></li>
@@ -90,14 +90,40 @@
                 <!--Docs nav Kanan=======================================================-->
 
                 <div class="span9">
-                    <div class="page-header">
-                    </div>
-                    <div class="hero-unit">
-                        <h1>Selamat Datang,</h1>
-                        <p>Di Apliasi Pengolahan Nilai Raport untuk Pengajuan SNMPTN Undangan dan Bidikmisi</p>
-                    </div>
-                    <div class="page-header">
-                    </div>
+                    <form class="bs-docs-example form-horizontal">
+                        
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Nama Siswa</th>
+                                    <th>NIS</th>
+                                    <th>Mata Pelajaran</th>
+                                    <th>Semester</th>
+                                    <th>Tahun Ajaran</th>
+                                    <th>Keterangan</th>
+                                </tr>
+                            </thead>
+
+                            <c:forEach var="ms" items="${MapelSiswa}">
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td>${ms.siswa.nama}</td>
+                                        <td>${ms.siswa.nis}</td>
+                                        <td>${ms.mapel.namamapel}</td>
+                                        <td>${ms.mapel.semester}</td>
+                                        <td>${ms.tahunAjar}</td>
+                                        <td><a href="${pageContext.request.contextPath}/nilaisiswa/${ms.siswa.siswaId}/${ms.mapel.mapelId}">Input Nilai</a></td>
+                                        
+                                        
+                                        
+                                    </tr>
+                                </tbody>
+                            </c:forEach>
+
+                        </table>
+                    </form>
                 </div>
             </div>
 

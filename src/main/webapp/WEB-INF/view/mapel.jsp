@@ -59,7 +59,7 @@
                             <a href="#">Nilai</a>
                             <ul class="dropdown-menu">
                                 <li><i class="dropdown-submenu"></i><a href="${pageContext.request.contextPath}/mplsis/input">Input Nilai</a></li>
-                                <li><i class="dropdown-submenu"></i><a href="#">Lihat Nilai</a></li>
+                                <li><i class="dropdown-submenu"></i><a href="${pageContext.request.contextPath}/mapelsiswa">Lihat Nilai</a></li>
                             </ul>
                         </li>
                         <li><a href="${pageContext.request.contextPath}/mapeltampil"><i class="dropdown-submenu"></i> Mata Pelajaran </a></li>
@@ -99,6 +99,7 @@
                                 <th>Nama Mata Pelajaran</th>
                                 <th>Kede Mata Pelajaran</th>
                                 <th>KKM</th>
+                                <th>Semester</th>
                                 <th>Keterangan</th>
                             </tr>
                         </thead>
@@ -112,6 +113,7 @@
                                     <td> ${mapel.namamapel} </td>
                                     <td> ${mapel.kodemapel} </td>
                                     <td> ${mapel.kkm} </td>
+                                    <td> ${mapel.semester} </td>
                                     <td><a href="${pageContext.request.contextPath}/mapeledit/${mapel.mapelId}" onclick="">Edit</a>&nbsp;&nbsp;|&nbsp;|&nbsp;&nbsp;
                                         <a href="${pageContext.request.contextPath}/mapeldelete/${mapel.mapelId}" onclick="return confirm('Apakah Anda yakin akan menghapus mata pelajaran ${mapel.namamapel} ? ')">Hapus</a></td>
 

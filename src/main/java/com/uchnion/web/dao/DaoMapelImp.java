@@ -33,7 +33,9 @@ public class DaoMapelImp implements DaoMapel{
         if(MapelUp != null){
             MapelUp.setKodemapel(mapel.getKodemapel());
             MapelUp.setNamamapel(mapel.getNamamapel());
+            MapelUp.setSemester(mapel.getSemester());
             MapelUp.setKkm(mapel.getKkm());
+//            MapelUp.setPraktik(mapel.getPraktik());
             
             getSessionFactory().update(MapelUp);
         }
@@ -60,7 +62,9 @@ public class DaoMapelImp implements DaoMapel{
         if(MapelSel != null){
             MapelSel.setKodemapel(mapel.getKodemapel());
             MapelSel.setNamamapel(mapel.getNamamapel());
+            MapelSel.setSemester(mapel.getSemester());
             MapelSel.setKkm(mapel.getKkm());
+//            MapelSel.setPraktik(mapel.getPraktik());
             
             getSessionFactory().update(MapelSel);
         }

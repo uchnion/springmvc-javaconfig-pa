@@ -21,4 +21,5 @@ public interface DaoAkun {
     
     List<Akun>getAllAkun();
     
+    boolean isLogin(Akun akun);
 }

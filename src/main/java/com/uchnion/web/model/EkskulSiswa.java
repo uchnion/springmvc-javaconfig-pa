@@ -58,7 +58,7 @@ public class EkskulSiswa implements Serializable {
         getPk().setEkskul(ekskul);
     }
 
-    @Column(name = "TAHUN_AJAR", nullable = false, length = 10)
+    @Column(name = "TAHUN_AJAR", nullable = true, length = 10)
     public String getTahunAjar() {
         return tahunAjar;
     }
@@ -67,7 +67,7 @@ public class EkskulSiswa implements Serializable {
         this.tahunAjar = tahunAjar;
     }
 
-    @Column(name = "SEMESTER", nullable = false, length = 10)
+    @Column(name = "SEMESTER", nullable = true, length = 10)
     public String getSemester() {
         return semester;
     }
@@ -76,7 +76,7 @@ public class EkskulSiswa implements Serializable {
         this.semester = semester;
     }
 
-    @Column(name = "NILAI_EKSKUL", nullable = false, length = 10)
+    @Column(name = "NILAI_EKSKUL", nullable = true, length = 10)
     public String getNilaiEkskul() {
         return nilaiEkskul;
     }

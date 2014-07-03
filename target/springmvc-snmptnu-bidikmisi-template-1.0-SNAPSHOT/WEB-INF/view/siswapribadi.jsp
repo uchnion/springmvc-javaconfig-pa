@@ -1,4 +1,5 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,7 +51,7 @@
             <!-- Docs nav
             ================================================== -->
             <div class="row">
-                
+
                 <div class="span3 bs-docs-sidebar">
                     <ul class="nav nav-list bs-docs-sidenav">
                         <li><a href="${pageContext.request.contextPath}/home"><i class="dropdown-submenu"></i> Beranda </a></li>
@@ -65,7 +66,7 @@
                             <a href="#">Nilai</a>
                             <ul class="dropdown-menu">
                                 <li><i class="dropdown-submenu"></i><a href="${pageContext.request.contextPath}/mplsis/input">Input Nilai</a></li>
-                                <li><i class="dropdown-submenu"></i><a href="#">Lihat Nilai</a></li>
+                                <li><i class="dropdown-submenu"></i><a href="${pageContext.request.contextPath}/mapelsiswa">Lihat Nilai</a></li>
                             </ul>
                         </li>
                         <li><a href="${pageContext.request.contextPath}/mapeltampil"><i class="dropdown-submenu"></i> Mata Pelajaran </a></li>
@@ -93,215 +94,213 @@
 
                 <div class="span9">
                     <h3 style="text-align:center">IDENTITAS PESERTA DIDIK</h3>
+                    <%--<form:form commandName="TampilPribadi" action="${pageContext.request.contextPath}/siswainput" method="POST"--%>
+                    <!--class="bs-docs-example form-horizontal">-->
                     <form class="bs-docs-example form-horizontal">
 
-                        <c:forEach var="pribadi" items="${TampilPribadi}">
-
-                            <div class="control-group info">
-                                <label class="control-label" for="inputInfo">Nama Peserta Didik :</label>
-                                <div class="controls">
-                                    <span class="help-inline">${pribadi.nama}</span>
-                                </div>
-                            </div>
-
-                            <div class="control-group info">
-                                <label class="control-label" for="inputInfo">NIS :</label>
-                                <div class="controls">
-                                    <span class="help-inline">${pribadi.nis}</span>
-                                </div>
-                            </div>
-
-                            <div class="control-group info">
-                                <label class="control-label" for="inputInfo">Tempat, Tanggal Lahir :</label>
-                                <div class="controls">
-                                    <span class="help-inline">${pribadi.tempat_l},</span>
-                                    <span class="help-inline">${pribadi.tanggal_l}</span>
-                                </div>
-                            </div>
-
-                            <div class="control-group info">
-                                <label class="control-label" for="inputInfo">Jenis Kelamin :</label>
-                                <div class="controls">
-                                    <span class="help-inline">${pribadi.jenisKelamin}</span>
-                                </div>
-                            </div>
-
-                            <div class="control-group info">
-                                <label class="control-label" for="inputInfo">Agama :</label>
-                                <div class="controls">
-                                    <span class="help-inline">${pribadi.agama}</span>
-                                </div>
-                            </div>
-
-                            <div class="control-group info">
-                                <label class="control-label" for="inputInfo">Anak Ke- :</label>
-                                <div class="controls">
-                                    <span class="help-inline">${pribadi.anak_ke}</span><span class="help-inline">(Satu)</span>
-                                </div>
-                            </div>
-
-                            <div class="control-group info">
-                                <label class="control-label" for="inputInfo">Status dalam Keluarga :</label>
-                                <div class="controls">
-                                    <span class="help-inline">${pribadi.statinKeluarga}</span>
-                                </div>
-                            </div>
-
-                            <div class="control-group info">
-                                <label class="control-label" for="inputInfo">Alamat Peserta Didik :</label>
-                                <div class="controls">
-                                    <span class="help-inline">${pribadi.alamat}</span>
-                                </div>
-                            </div>
-
-                            <div class="control-group info">
-                                <label class="control-label" for="inputInfo">Telepon :</label>
-                                <div class="controls">
-                                    <span class="help-inline">${pribadi.telepon}</span>
-                                </div>
-                            </div>
-
-                            <div class="control-group info">
-                                <label class="control-label" for="inputInfo">Diterima di Dekolah ini</label>
-                            </div>
-                            <div class="control-group info">
-                                <label class="control-label" for="inputInfo">Di Kelas :</label>
-                                <div class="controls">
-                                    <span class="help-inline">${pribadi.dikelas}</span>
-                                </div>
-                            </div>
-
-                            <div class="control-group info">
-                                <label class="control-label" for="inputInfo">Pada Tanggal :</label>
-                                <div class="controls">
-                                    <span class="help-inline">${pribadi.padatgl}</span>
-                                </div>
-                            </div>
-
-                            <div class="control-group info">
-                                <label class="control-label" for="inputInfo">Pada Tanggal :</label>
-                                <div class="controls">
-                                    <span class="help-inline">${pribadi.semester}</span>
-                                </div>
-                            </div>
-                            <div class="control-group info">
-                                <label class="control-label" for="inputInfo">Nama Sekolah Asal :</label>
-                                <div class="controls">
-                                    <span class="help-inline">${pribadi.skol_asal}</span>
-                                </div>
-                            </div>
-
-                            <div class="control-group info">
-                                <label class="control-label" for="inputInfo">Nama Orang Tua</label>
-                            </div>
-                            <div class="control-group info">
-                                <label class="control-label" for="inputInfo">Ayah :</label>
-                                <div class="controls">
-                                    <span class="help-inline">${pribadi.namaayah}</span>
-                                </div>
-                            </div>
-
-                            <div class="control-group info">
-                                <label class="control-label" for="inputInfo">Ibu :</label>
-                                <div class="controls">
-                                    <span class="help-inline">${pribadi.namaibu}</span>
-                                </div>
-                            </div>
-
-                            <div class="control-group info">
-                                <label class="control-label" for="inputInfo">Alamat Orang Tua :</label>
-                                <div class="controls">
-                                    <span class="help-inline">${pribadi.alamatortu}</span>
-                                </div>
-                            </div>
-
-                            <div class="control-group info">
-                                <label class="control-label" for="inputInfo">Telepon Orang Tua :</label>
-                                <div class="controls">
-                                    <span class="help-inline">${pribadi.telepon_ortu}</span>
-                                </div>
-                            </div>
-
-                            <div class="control-group info">
-                                <label class="control-label" for="inputInfo">Pekerjaan Orang Tua</label>
-                            </div>
-
-                            <div class="control-group info">
-                                <label class="control-label" for="inputInfo">Ayah :</label>
-                                <div class="controls">
-                                    <span class="help-inline">${pribadi.kerjaayah}</span>
-                                </div>
-                            </div>
-
-                            <div class="control-group info">
-                                <label class="control-label" for="inputInfo">Ibu :</label>
-                                <div class="controls">
-                                    <span class="help-inline">${pribadi.kerjaibu}</span>
-                                </div>
-                            </div>
-
-                            <div class="control-group info">
-                                <label class="control-label" for="inputInfo">Penghasilan Orang Tua :</label>
-                                <div class="controls">
-                                    <span class="help-inline">Rp.</span>
-                                    <span class="help-inline">${pribadi.gaji_ortu}/Bulan</span>
-                                </div>
-                            </div>
-
-                            <div class="page-header">
-                            </div>
-
-
-                            <div class="control-group info">
-                                <label class="control-label" for="inputInfo">Nama Wali :</label>
-                                <div class="controls">
-                                    <span class="help-inline">${pribadi.namawali}</span>
-                                </div>
-                            </div>
-
-                            <div class="control-group info">
-                                <label class="control-label" for="inputInfo">Alamat Wali :</label>
-                                <div class="controls">
-                                    <span class="help-inline">${pribadi.alamatWali}</span>
-                                </div>
-                            </div>
-
-                            <div class="control-group info">
-                                <label class="control-label" for="inputInfo">Telepon Wali :</label>
-                                <div class="controls">
-                                    <span class="help-inline">${pribadi.teleponWali}</span>
-                                </div>
-                            </div>
-
-                            <div class="control-group info">
-                                <label class="control-label" for="inputInfo">Pekerjaan Wali :</label>
-                                <div class="controls">
-                                    <span class="help-inline">${pribadi.kerjaWali}</span>
-                                </div>
-                            </div>
-
-                            <div class="control-group info">
-                                <label class="control-label" for="inputInfo">Penghasilan Wali :</label>
-                                <div class="controls">
-                                    <span class="help-inline">Rp.</span>
-                                    <span class="help-inline">${pribadi.gajiWali}/Bulan</span>
-                                </div>
-                            </div>
-                                
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Nama Peserta Didik :</label>
                             <div class="controls">
-                                <p><a href="${pageContext.request.contextPath}/siswatampil" class="btn btn-primary" onclick=""><- Kembali</a> 
-                                </p>
+                                <span class="help-inline">${pribadi.nama}</span>
                             </div>
-                    </div>
+                        </div>
 
-                    <div class="page-header">
-                    </div>
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">NIS :</label>
+                            <div class="controls">
+                                <span class="help-inline">${pribadi.nis}</span>
+                            </div>
+                        </div>
+
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Tempat, Tanggal Lahir :</label>
+                            <div class="controls">
+                                <span class="help-inline">${pribadi.tempat_l},</span>
+                                <span class="help-inline">${pribadi.tanggal_l}</span>
+                            </div>
+                        </div>
+
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Jenis Kelamin :</label>
+                            <div class="controls">
+                                <span class="help-inline">${pribadi.jenisKelamin}</span>
+                            </div>
+                        </div>
+
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Agama :</label>
+                            <div class="controls">
+                                <span class="help-inline">${pribadi.agama}</span>
+                            </div>
+                        </div>
+
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Anak Ke- :</label>
+                            <div class="controls">
+                                <span class="help-inline">${pribadi.anak_ke}</span><span class="help-inline">(Satu)</span>
+                            </div>
+                        </div>
+
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Status dalam Keluarga :</label>
+                            <div class="controls">
+                                <span class="help-inline">${pribadi.statinKeluarga}</span>
+                            </div>
+                        </div>
+
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Alamat Peserta Didik :</label>
+                            <div class="controls">
+                                <span class="help-inline">${pribadi.alamat}</span>
+                            </div>
+                        </div>
+
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Telepon :</label>
+                            <div class="controls">
+                                <span class="help-inline">${pribadi.telepon}</span>
+                            </div>
+                        </div>
+
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Diterima di Dekolah ini</label>
+                        </div>
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Di Kelas :</label>
+                            <div class="controls">
+                                <span class="help-inline">${pribadi.dikelas}</span>
+                            </div>
+                        </div>
+
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Pada Tanggal :</label>
+                            <div class="controls">
+                                <span class="help-inline">${pribadi.padatgl}</span>
+                            </div>
+                        </div>
+
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Pada Tanggal :</label>
+                            <div class="controls">
+                                <span class="help-inline">${pribadi.semester}</span>
+                            </div>
+                        </div>
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Nama Sekolah Asal :</label>
+                            <div class="controls">
+                                <span class="help-inline">${pribadi.skol_asal}</span>
+                            </div>
+                        </div>
+
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Nama Orang Tua</label>
+                        </div>
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Ayah :</label>
+                            <div class="controls">
+                                <span class="help-inline">${pribadi.namaayah}</span>
+                            </div>
+                        </div>
+
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Ibu :</label>
+                            <div class="controls">
+                                <span class="help-inline">${pribadi.namaibu}</span>
+                            </div>
+                        </div>
+
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Alamat Orang Tua :</label>
+                            <div class="controls">
+                                <span class="help-inline">${pribadi.alamatortu}</span>
+                            </div>
+                        </div>
+
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Telepon Orang Tua :</label>
+                            <div class="controls">
+                                <span class="help-inline">${pribadi.telepon_ortu}</span>
+                            </div>
+                        </div>
+
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Pekerjaan Orang Tua</label>
+                        </div>
+
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Ayah :</label>
+                            <div class="controls">
+                                <span class="help-inline">${pribadi.kerjaayah}</span>
+                            </div>
+                        </div>
+
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Ibu :</label>
+                            <div class="controls">
+                                <span class="help-inline">${pribadi.kerjaibu}</span>
+                            </div>
+                        </div>
+
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Penghasilan Orang Tua :</label>
+                            <div class="controls">
+                                <span class="help-inline">Rp.</span>
+                                <span class="help-inline">${pribadi.gaji_ortu}/Bulan</span>
+                            </div>
+                        </div>
+
+                        <div class="page-header">
+                        </div>
 
 
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Nama Wali :</label>
+                            <div class="controls">
+                                <span class="help-inline">${pribadi.namawali}</span>
+                            </div>
+                        </div>
 
-                </c:forEach>
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Alamat Wali :</label>
+                            <div class="controls">
+                                <span class="help-inline">${pribadi.alamatWali}</span>
+                            </div>
+                        </div>
+
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Telepon Wali :</label>
+                            <div class="controls">
+                                <span class="help-inline">${pribadi.teleponWali}</span>
+                            </div>
+                        </div>
+
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Pekerjaan Wali :</label>
+                            <div class="controls">
+                                <span class="help-inline">${pribadi.kerjaWali}</span>
+                            </div>
+                        </div>
+
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Penghasilan Wali :</label>
+                            <div class="controls">
+                                <span class="help-inline">Rp.</span>
+                                <span class="help-inline">${pribadi.gajiWali}/Bulan</span>
+                            </div>
+                        </div>
+
+                        <div class="controls">
+                            <p><a href="${pageContext.request.contextPath}/siswatampil" class="btn btn-primary" onclick=""><- Kembali</a> 
+                            </p>
+                        </div>
+                </div>
+
+                <div class="page-header">
+                </div>
 
                 </form>
+
+                <%--</form:form>--%>
             </div>
 
         </div>

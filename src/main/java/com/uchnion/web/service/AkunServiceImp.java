@@ -13,8 +13,8 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Service
 @Transactional
-public class AkunServiceImp implements AkunService{
-    
+public class AkunServiceImp implements AkunService {
+
     @Autowired
     private DaoAkun daoakun;
 
@@ -48,5 +48,10 @@ public class AkunServiceImp implements AkunService{
     public List<Akun> getAllAkun() {
         return daoakun.getAllAkun();
     }
-    
+
+    @Override
+    public boolean isLogin(Akun akun) {
+        return daoakun.isLogin(akun);
+    }
+
 }

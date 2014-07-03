@@ -55,11 +55,20 @@ public class SiswaController {
 //    }
     
     @RequestMapping(value = "/siswatampil/pribadi/{siswaId}", method = RequestMethod.GET)
-    public String SiswaPribadiPage(Model model) { 
-        List <Siswa> siswa = siswaservice.getAllSiswa();
-        model.addAttribute("TampilPribadi", siswa);
+    public String SiswaPribadiPage(Model model, @PathVariable Integer siswaId) { 
+        Siswa siswa = siswaservice.getSiswa(siswaId);
+        model.addAttribute("pribadi", siswa);
         return "siswapribadi";
     }
+//    @RequestMapping(value = "/siswatampil/pribadi/{siswaId}", method = RequestMethod.GET)
+//    public ModelAndView SiswaPribadiPage(@PathVariable Integer siswaId) {
+//        ModelAndView mav = new ModelAndView("siswapribadi");
+//
+//        Siswa siswa = siswaservice.getSiswa(siswaId);
+//        mav.addObject("TampilPribadi", siswa);
+//
+//        return mav;
+//    }
 
     @RequestMapping(value = "/siswaedit/{siswaId}", method = RequestMethod.GET)
     public ModelAndView SiswaEditPage(@PathVariable Integer siswaId) {

@@ -63,7 +63,7 @@
                             <a href="#">Nilai</a>
                             <ul class="dropdown-menu">
                                 <li><i class="dropdown-submenu"></i><a href="${pageContext.request.contextPath}/mplsis/input">Input Nilai</a></li>
-                                <li><i class="dropdown-submenu"></i><a href="#">Lihat Nilai</a></li>
+                                <li><i class="dropdown-submenu"></i><a href="${pageContext.request.contextPath}/mapelsiswa">Lihat Nilai</a></li>
                             </ul>
                         </li>
                         <li><a href="${pageContext.request.contextPath}/mapeltampil"><i class="dropdown-submenu"></i> Mata Pelajaran </a></li>
@@ -126,13 +126,11 @@
                                 <form:input path="nilaiEkskul" placeholder=""/>
                             </div>
                         </div>
-                        <div class="control-group info">
-                            <tr>
-                                <td colspan="2"><input type="submit" value="Simpan"/></td>
-                            </tr>
+                        <div class="controls">
+                            <input type="submit" class="btn btn-primary" value="Simpan"/>  
                         </div>
 
-                        <table class="table table-striped">
+<!--                        <table class="table table-striped">
                             <thead>
                                 <tr>
                                     <th>No</th>
@@ -164,7 +162,7 @@
                         <div class="controls">
                             <p><input type="submit" class="btn btn-primary" value="Simpan"/>
                                 <a href="" class="btn">Batal</a></p>
-                        </div>
+                        </div>-->
                             
                     </form:form>
                     <div class="page-header">

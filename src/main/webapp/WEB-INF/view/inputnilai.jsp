@@ -2,10 +2,10 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
-        <meta charset="utf-8">
-        <title>Input Data Siswa</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Home Aplikasi Pengolahan Nilai untuk pengajuan SNMPTN UNDANGAN dan Bidikmisi</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
@@ -45,12 +45,10 @@
 
             </div>
 
-            <!-- Docs nav kiri
-            ================================================== -->
             <!-- Docs nav
             ================================================== -->
             <div class="row">
-                
+
                 <div class="span3 bs-docs-sidebar">
                     <ul class="nav nav-list bs-docs-sidenav">
                         <li><a href="${pageContext.request.contextPath}/home"><i class="dropdown-submenu"></i> Beranda </a></li>
@@ -88,54 +86,59 @@
                         <li><a href="${pageContext.request.contextPath}/akuntampil"><i class="dropdown-submenu"></i>  Akun</a></li>
                     </ul>
                 </div>
-                    
-                <!-- Docs nav Kanan
-                ================================================== -->
+
+
+                <!--Docs nav Kanan=======================================================-->
 
                 <div class="span9">
-
-                    <h3 style="text-align:center">FORM TAMBAH KELAS</h3>
-
-                    <form:form commandName="tambahkelas" action="${pageContext.request.contextPath}/kelasinput" method="POST"
-                               class="bs-docs-example form-horizontal">
+                    <div class="page-header">
+                    </div>
+                    <form:form commandName="inputnilai" action="${pageContext.request.contextPath}/nilaisiswa"
+                               class="bs-docs-example form-horizontal" method="POST">
 
                         <div class="control-group info">
-                            <label class="control-label" for="inputInfo">Kode Kelas :</label>
+                            <label class="control-label" for="inputInfo">Siswa :</label>
                             <div class="controls">
-                                <form:input path="kodekKelas" required="true"/>
+                                <form:hidden path="pk.siswa.siswaId"/>
+                                <form:input path="pk.siswa.nama" disabled="true"/>
                             </div>
                         </div>
                         <div class="control-group info">
-                            <label class="control-label" for="inputInfo">Kelas :</label>
+                            <label class="control-label" for="inputInfo">Mapel :</label>
                             <div class="controls">
-                                <form:input path="namaKelas" required="true"/>
-                            </div>
-                        </div>
-                            
-                        <div class="control-group info">
-                            <label class="control-label" for="inputInfo">Jurusan :</label>
-                            <div class="controls">
-                                <label class="radio">
-                                    <form:radiobutton path="jurusan" value="-" required="true"/>Belum
-                                </label>
-                                <label class="radio">
-                                    <form:radiobutton path="jurusan" value="IPA" required="true"/>IPA
-                                </label>
-                                <label class="radio">
-                                    <form:radiobutton path="jurusan" value="IPS" required="true"/>IPS
-                                </label>
+                                <form:hidden path="pk.mapel.mapelId"/>
+                                <form:input path="pk.mapel.kodemapel" disabled="true"/>
                             </div>
                         </div>
 
-                        <div class="page-header">
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Tahun Pelajaran :</label>
+                            <div class="controls">
+                                <form:input path="tahunAjar" placeholder="2002/2003" required="true"/>
+                            </div>
                         </div>
+
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Akademik :</label>
+                            <div class="controls">
+                                <form:input path="akademik" placeholder="0" />
+                            </div>
+                        </div>
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Praktik :</label>
+                            <div class="controls">
+                                <form:input path="praktik" placeholder="0" />
+                            </div>
+                        </div>
+
+
                         <div class="controls">
                             <p><input type="submit" class="btn btn-primary" value="Simpan"/>
-                                <a href="mapel.html" class="btn">Batal</a></p>
                         </div>
 
                     </form:form>
-
+                    <div class="page-header">
+                    </div>
                 </div>
             </div>
 

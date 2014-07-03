@@ -63,7 +63,7 @@
                             <a href="#">Nilai</a>
                             <ul class="dropdown-menu">
                                 <li><i class="dropdown-submenu"></i><a href="${pageContext.request.contextPath}/mplsis/input">Input Nilai</a></li>
-                                <li><i class="dropdown-submenu"></i><a href="#">Lihat Nilai</a></li>
+                                <li><i class="dropdown-submenu"></i><a href="${pageContext.request.contextPath}/mapelsiswa">Lihat Nilai</a></li>
                             </ul>
                         </li>
                         <li><a href="${pageContext.request.contextPath}/mapeltampil"><i class="dropdown-submenu"></i> Mata Pelajaran </a></li>
@@ -109,30 +109,25 @@
                             </div>
                         </div>
 
-                        <div class="control-group info">
+<!--                        <div class="control-group info">
                             <label class="control-label" for="inputInfo">Akademik :</label>
                             <div class="controls">
-                                <form:input path="akademik" placeholder="0"/>
+                                <form:input path="akademik" placeholder="0" />
                             </div>
                         </div>
                         <div class="control-group info">
                             <label class="control-label" for="inputInfo">Praktik :</label>
                             <div class="controls">
-                                <form:input path="praktik" placeholder="0"/>
+                                <form:input path="praktik" placeholder="0" />
                             </div>
-                        </div>
+                        </div>-->
                         <div class="control-group info">
-                            <label class="control-label" for="inputInfo">Semester :</label>
+                            <label class="control-label" for="inputInfo">Tahun Pelajaran :</label>
                             <div class="controls">
-                                <form:input path="tahunAjar" placeholder="2001/2002"/>
+                                <form:input path="tahunAjar" placeholder="2002/2003" required="true"/>
                             </div>
                         </div>
-                        <div class="control-group info">
-                            <label class="control-label" for="inputInfo">Tahun Ajaran :</label>
-                            <div class="controls">
-                                <form:input path="Semester" placeholder="1"/>
-                            </div>
-                        </div>
+
                         <div class="controls">
                             <p><input type="submit" class="btn btn-primary" value="Simpan"/>
                         </div>

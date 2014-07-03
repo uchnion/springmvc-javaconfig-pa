@@ -70,5 +70,10 @@ public class MapelSiswaServiceImp implements MapelSiswaService{
     public List<Mapel> getAllMapel() {
         return daomapel.getAllMapel();
     }
+
+    @Override
+    public MapelSiswa getMapelSiswa(Integer mapelId, Integer siswaId) {
+        return daoms.getMapelSiswa(mapelId,siswaId);
+    }
     
 }

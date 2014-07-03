@@ -65,7 +65,7 @@
                             <a href="#">Nilai</a>
                             <ul class="dropdown-menu">
                                 <li><i class="dropdown-submenu"></i><a href="${pageContext.request.contextPath}/mplsis/input">Input Nilai</a></li>
-                                <li><i class="dropdown-submenu"></i><a href="#">Lihat Nilai</a></li>
+                                <li><i class="dropdown-submenu"></i><a href="${pageContext.request.contextPath}/mapelsiswa">Lihat Nilai</a></li>
                             </ul>
                         </li>
                         <li><a href="${pageContext.request.contextPath}/mapeltampil"><i class="dropdown-submenu"></i> Mata Pelajaran </a></li>
@@ -102,13 +102,13 @@
                         <div class="control-group info">
                             <label class="control-label" for="inputInfo">Kode Kelas :</label>
                             <div class="controls">
-                                <form:input path="kodekKelas"/>
+                                <form:input path="kodekKelas" required="true"/>
                             </div>
                         </div>
                         <div class="control-group info">
                             <label class="control-label" for="inputInfo">Kelas :</label>
                             <div class="controls">
-                                <form:input path="namaKelas"/>
+                                <form:input path="namaKelas" required="true"/>
                             </div>
                         </div>
                             
@@ -116,13 +116,13 @@
                             <label class="control-label" for="inputInfo">Jurusan :</label>
                             <div class="controls">
                                 <label class="radio">
-                                    <form:radiobutton path="jurusan" value="-" />Belum
+                                    <form:radiobutton path="jurusan" value="-" required="true"/>Belum
                                 </label>
                                 <label class="radio">
-                                    <form:radiobutton path="jurusan" value="IPA" />IPA
+                                    <form:radiobutton path="jurusan" value="IPA" required="true"/>IPA
                                 </label>
                                 <label class="radio">
-                                    <form:radiobutton path="jurusan" value="IPS" />IPS
+                                    <form:radiobutton path="jurusan" value="IPS" required="true"/>IPS
                                 </label>
                             </div>
                         </div>

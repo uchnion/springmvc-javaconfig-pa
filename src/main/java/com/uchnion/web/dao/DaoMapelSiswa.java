@@ -20,4 +20,6 @@ public interface DaoMapelSiswa {
     void selectMapelSiswa (MapelSiswa mplsis);
     
     List<MapelSiswa>getAllMapelSiswa();
+
+    public MapelSiswa getMapelSiswa(Integer mapelId, Integer siswaId);
 }

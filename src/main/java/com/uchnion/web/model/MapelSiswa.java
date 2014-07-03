@@ -27,7 +27,6 @@ public class MapelSiswa implements Serializable{
     private Integer akademik;
     private Integer praktik;
     private String tahunAjar;
-    private String Semester;
 
     public MapelSiswa() {
     }
@@ -59,7 +58,7 @@ public class MapelSiswa implements Serializable{
         getPk().setMapel(mapel);
     }
 
-    @Column(name = "NILAI_AKADEMIK",nullable = false)
+    @Column(name = "NILAI_AKADEMIK",nullable = true)
     public Integer getAkademik() {
         return akademik;
     }
@@ -68,7 +67,7 @@ public class MapelSiswa implements Serializable{
         this.akademik = akademik;
     }
 
-    @Column(name = "NILAI_PRAKTIK",nullable = false)
+    @Column(name = "NILAI_PRAKTIK",nullable = true)
     public Integer getPraktik() {
         return praktik;
     }
@@ -84,15 +83,6 @@ public class MapelSiswa implements Serializable{
 
     public void setTahunAjar(String tahunAjar) {
         this.tahunAjar = tahunAjar;
-    }
-
-    @Column(name = "SEMESTER", nullable = false, length = 10)
-    public String getSemester() {
-        return Semester;
-    }
-
-    public void setSemester(String Semester) {
-        this.Semester = Semester;
     }
     
     public boolean equals(Object o) {

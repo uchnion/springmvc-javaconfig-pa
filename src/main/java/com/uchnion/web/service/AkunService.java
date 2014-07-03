@@ -20,5 +20,6 @@ public interface AkunService {
     void selectAkun (Akun akun);
     
     List<Akun>getAllAkun();
-    
+
+    boolean isLogin(Akun akun);
 }

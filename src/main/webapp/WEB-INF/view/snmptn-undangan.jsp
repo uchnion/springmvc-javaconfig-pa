@@ -62,7 +62,7 @@
                             <a href="#">Nilai</a>
                             <ul class="dropdown-menu">
                                 <li><i class="dropdown-submenu"></i><a href="${pageContext.request.contextPath}/mplsis/input">Input Nilai</a></li>
-                                <li><i class="dropdown-submenu"></i><a href="#">Lihat Nilai</a></li>
+                                <li><i class="dropdown-submenu"></i><a href="${pageContext.request.contextPath}/mapelsiswa">Lihat Nilai</a></li>
                             </ul>
                         </li>
                         <li><a href="${pageContext.request.contextPath}/mapeltampil"><i class="dropdown-submenu"></i> Mata Pelajaran </a></li>
@@ -93,8 +93,8 @@
                     <div class="page-header">
                     </div>
                     <div class="hero-unit">
-                        <h1>Selamat Datang,</h1>
-                        <p>SNMPTN Undangan</p>
+                        <h1>SNMPTN Undangan</h1>
+                        <p>Sman 3 Seluma</p>
                     </div>
                     <div class="page-header">
                     </div>

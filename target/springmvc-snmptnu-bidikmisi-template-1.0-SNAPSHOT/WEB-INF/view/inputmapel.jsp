@@ -65,7 +65,7 @@
                             <a href="#">Nilai</a>
                             <ul class="dropdown-menu">
                                 <li><i class="dropdown-submenu"></i><a href="${pageContext.request.contextPath}/mplsis/input">Input Nilai</a></li>
-                                <li><i class="dropdown-submenu"></i><a href="#">Lihat Nilai</a></li>
+                                <li><i class="dropdown-submenu"></i><a href="${pageContext.request.contextPath}/mapelsiswa">Lihat Nilai</a></li>
                             </ul>
                         </li>
                         <li><a href="${pageContext.request.contextPath}/mapeltampil"><i class="dropdown-submenu"></i> Mata Pelajaran </a></li>
@@ -101,20 +101,26 @@
                         <div class="control-group info">
                             <label class="control-label" for="inputInfo">Kode Mata Pelajaran :</label>
                             <div class="controls">
-                                <form:input path="kodemapel"/>
+                                <form:input path="kodemapel" required="true"/>
                             </div>
                         </div>
                         <div class="control-group info">
                             <label class="control-label" for="inputInfo">Nama Mata Pelajaran :</label>
                             <div class="controls">
-                                <form:input path="namamapel"/>
+                                <form:input path="namamapel" required="true"/>
+                            </div>
+                        </div>
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Semester :</label>
+                            <div class="controls">
+                                <form:input path="semester" required="true"/>
                             </div>
                         </div>
                         <div class="control-group info">
                             <label class="control-label" for="inputInfo">KKM :</label>
                             <div class="controls">
-                                <form:input path="kkm" class="span1"/>
-                            </div>
+                                <form:input path="kkm" class="span1" required="true" />
+                            </div> 
                         </div>
 
                         <div class="page-header">

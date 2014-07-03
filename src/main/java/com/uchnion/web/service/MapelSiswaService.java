@@ -27,5 +27,7 @@ public interface MapelSiswaService {
     List<Siswa>getAllSiswa();
     
     List<Mapel> getAllMapel();
+
+    public MapelSiswa getMapelSiswa(Integer mapelId, Integer siswaId);
     
 }

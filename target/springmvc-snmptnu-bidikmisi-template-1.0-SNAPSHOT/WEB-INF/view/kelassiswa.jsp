@@ -47,7 +47,7 @@
             <!-- Docs nav
             ================================================== -->
             <div class="row">
-                
+
                 <div class="span3 bs-docs-sidebar">
                     <ul class="nav nav-list bs-docs-sidenav">
                         <li><a href="${pageContext.request.contextPath}/home"><i class="dropdown-submenu"></i> Beranda </a></li>
@@ -62,7 +62,7 @@
                             <a href="#">Nilai</a>
                             <ul class="dropdown-menu">
                                 <li><i class="dropdown-submenu"></i><a href="${pageContext.request.contextPath}/mplsis/input">Input Nilai</a></li>
-                                <li><i class="dropdown-submenu"></i><a href="#">Lihat Nilai</a></li>
+                                <li><i class="dropdown-submenu"></i><a href="${pageContext.request.contextPath}/mapelsiswa">Lihat Nilai</a></li>
                             </ul>
                         </li>
                         <li><a href="${pageContext.request.contextPath}/mapeltampil"><i class="dropdown-submenu"></i> Mata Pelajaran </a></li>
@@ -90,14 +90,57 @@
                 <!--Docs nav Kanan=======================================================-->
 
                 <div class="span9">
-                    <div class="page-header">
-                    </div>
-                    <div class="hero-unit">
-                        <h1>Selamat Datang,</h1>
-                        <p>Di Apliasi Pengolahan Nilai Raport untuk Pengajuan SNMPTN Undangan dan Bidikmisi</p>
-                    </div>
-                    <div class="page-header">
-                    </div>
+                    <form class="bs-docs-example form-horizontal">
+                        
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Tahun Ajaran :</label>
+                            <div class="controls">
+                                <select class="span3">
+                                    <option>2001/2002</option>
+                                    <option>2002/2003</option>
+                                    <option>2003/2004</option>
+                                    <option>2004/2005</option>
+                                    <option>2005/2006</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Kelas :</label>
+                            <div class="controls">
+                                <select class="span3">
+                                    <option>XA</option>
+                                    <option>XI IPA1</option>
+                                    <option>XI IPS1</option>
+                                    <option>XII IPA1</option>
+                                    <option>XII IPS1</option>
+                                </select>
+                            </div>
+                        </div>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Nama Peserta Didik</th>
+                                    <th>NIS</th>
+                                    <th>Kelas</th>
+                                    <th>Tahun Ajaran</th>
+                                </tr>
+                            </thead>
+                            <c:forEach var="item" items="${ListKlsSiswa}">
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td>${item.siswa.nama}</td>
+                                        <td>${item.siswa.nis}</td>
+                                        <td>${item.kelas.namaKelas}</td>
+                                        <td>${item.tahunAjar}</td>
+                                    </tr>
+                                </tbody>
+                            </c:forEach>
+
+                        </table>
+                    </form>
                 </div>
             </div>
 
