@@ -1,4 +1,5 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@page session="true"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -54,32 +55,33 @@
                     </ul>
                 </div>
                 <div class="span9">
-                    <form class="bs-docs-example form-horizontal">
-                        <div class="page-header">
-                        </div>
-                        <div class="control-group">
-                            <label class="control-label" for="inputEmail">Username</label>
-                            <div class="controls">
-                                <input type="text" id="inputuser" placeholder="Username">
+                        <form:form commandName="akun" action="${pageContext.request.contextPath}/masuk" method="POST"
+                                   class="bs-docs-example form-horizontal">
+                            <div class="page-header">
                             </div>
-                        </div>
-                        <div class="control-group">
-                            <label class="control-label" for="inputPassword">Password</label>
-                            <div class="controls">
-                                <input type="password" id="inputPassword" placeholder="Password">
+                            <div class="control-group">
+                                <label class="control-label" for="inputEmail">Username</label>
+                                <div class="controls">
+                                    <form:input path="userakun"/>
+                                </div>
                             </div>
-                        </div>
-                        <div class="control-group">
-                            <div class="controls">
-                                <label class="checkbox">
-                                    <input type="checkbox"> Remember me
-                                </label>
-                                <button type="submit" class="btn">Sign in</button>
+                            <div class="control-group">
+                                <label class="control-label" for="inputPassword">Password</label>
+                                <div class="controls">
+                                    <form:password path="passakun"/>
+                                </div>
                             </div>
-                        </div>
-                        <div class="page-header">
-                        </div>
-                    </form>
+                            <div class="control-group">
+                                <div class="controls">
+                                    <label class="checkbox">
+                                        <input type="checkbox"> Remember me
+                                    </label>
+                                    <input type="submit" class="btn btn-primary" value="Sign In"/>
+                                </div>
+                            </div>
+                            <div class="page-header">
+                            </div>
+                    </form:form>
 
                 </div>
             </div>

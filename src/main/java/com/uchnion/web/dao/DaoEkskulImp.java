@@ -33,6 +33,7 @@ public class DaoEkskulImp implements DaoEkskul{
        if(EkskulUp != null){
            EkskulUp.setKodeEkskul(ekskul.getKodeEkskul());
            EkskulUp.setNamaEkskul(ekskul.getNamaEkskul());
+           EkskulUp.setSemester(ekskul.getSemester());
            
            getSessionFactory().update(EkskulUp);
        }
@@ -57,6 +58,7 @@ public class DaoEkskulImp implements DaoEkskul{
         if (EkskulSel != null){
             EkskulSel.setKodeEkskul(ekskul.getKodeEkskul());
             EkskulSel.setNamaEkskul(ekskul.getNamaEkskul());
+            EkskulSel.setSemester(ekskul.getSemester());
             
             getSessionFactory().update(EkskulSel);
         }

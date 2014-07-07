@@ -23,7 +23,7 @@ public class MainController {
 		ModelAndView model = new ModelAndView();
 		model.addObject("title", "Spring Security Login Form - Database Authentication");
 		model.addObject("message", "This is default page!");
-		model.setViewName("hello");
+		model.setViewName("pagehello");
 		return model;
 
 	}
@@ -34,7 +34,7 @@ public class MainController {
 		ModelAndView model = new ModelAndView();
 		model.addObject("title", "Spring Security Login Form - Database Authentication");
 		model.addObject("message", "This page is for ROLE_ADMIN only!");
-		model.setViewName("admin");
+		model.setViewName("pageadmin");
 
 		return model;
 
@@ -52,7 +52,7 @@ public class MainController {
 		if (logout != null) {
 			model.addObject("msg", "You've been logged out successfully.");
 		}
-		model.setViewName("login");
+		model.setViewName("pagelogin");
 
 		return model;
 
@@ -74,7 +74,7 @@ public class MainController {
 			
 		}
 		
-		model.setViewName("403");
+		model.setViewName("page403");
 		return model;
 
 	}

@@ -24,20 +24,23 @@ public class Ekskul implements Serializable{
     private Integer ekskulId;
     private String kodeEkskul;
     private String namaEkskul;
+    private String semester;
     private Set<EkskulSiswa> ekskulSiswacom = new HashSet<EkskulSiswa>(0);
 
     public Ekskul() {
     }
 
-    public Ekskul(String kodeEkskul, String namaEkskul) {
+    public Ekskul(String kodeEkskul, String namaEkskul, String semester) {
         this.kodeEkskul = kodeEkskul;
         this.namaEkskul = namaEkskul;
+        this.semester = semester;
     }
 
-    public Ekskul(String kodeEkskul, String namaEkskul, Set<EkskulSiswa> ekskulSiswacom) {
+    public Ekskul(String kodeEkskul, String namaEkskul, Set<EkskulSiswa> ekskulSiswacom, String semester) {
         this.kodeEkskul = kodeEkskul;
         this.namaEkskul = namaEkskul;
         this.ekskulSiswacom = ekskulSiswacom;
+        this.semester = semester;
     }
 
     @Id
@@ -67,6 +70,15 @@ public class Ekskul implements Serializable{
 
     public void setNamaEkskul(String namaEkskul) {
         this.namaEkskul = namaEkskul;
+    }
+
+    @Column(name = "SEMESTER", nullable = false, length = 40)
+    public String getSemester() {
+        return semester;
+    }
+
+    public void setSemester(String semester) {
+        this.semester = semester;
     }
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "pk.ekskul", cascade = CascadeType.ALL)

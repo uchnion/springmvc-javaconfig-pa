@@ -98,6 +98,7 @@
                                 <th>No</th>
                                 <th>Kode Ekskul</th>
                                 <th>Ekstra Kulikuler</th>
+                                <th>Semester</th>
                                 <th>Keterangan</th>
                             </tr>
                         </thead>
@@ -110,6 +111,7 @@
                                     <td>${ekskul.ekskulId}</td>
                                     <td> ${ekskul.kodeEkskul} </td>
                                     <td> ${ekskul.namaEkskul} </td>
+                                    <td> ${ekskul.semester} </td>
                                     <td><a href="${pageContext.request.contextPath}/ekskuledit/${ekskul.ekskulId}" 
                                            onclick="">Edit</a>&nbsp;&nbsp;|&nbsp;|&nbsp;&nbsp;
                                         <a href="${pageContext.request.contextPath}/ekskuldelete/${ekskul.ekskulId}" 

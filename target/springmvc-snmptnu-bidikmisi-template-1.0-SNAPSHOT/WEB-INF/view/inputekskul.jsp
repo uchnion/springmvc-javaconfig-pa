@@ -110,6 +110,12 @@
                                 <form:input path="namaEkskul"/>
                             </div>
                         </div>
+                        <div class="control-group info">
+                            <label class="control-label" for="inputInfo">Semester :</label>
+                            <div class="controls">
+                                <form:input path="semester"/>
+                            </div>
+                        </div>
 
                         <div class="page-header">
                         </div>
